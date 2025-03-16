@@ -122,6 +122,10 @@
   roles: ['shk']
   interests: ['Natural Language Processing','Conversational Agents']
 
+- name: Florian Grün
+  roles: ['shk']
+  interests: ['Medical Data Science']
+
 - name: Dr. Meike Nauta (PhD)
   roles: ['alumnus']
   interests: ['Explainable AI', 'Computer Vision']
@@ -141,10 +145,19 @@
   roles: ['alumnus']
   interests: ['Natural Language Processing','Conversational Agents']
 
+- name: Elmo Primmer (SHK)
+  roles: ['alumnus']
+  interests: ['Explainable AI',' Computer Vision']
+
 - name: Timofei Ushakov (SHK)
   roles: ['alumnus']
   interests: ['Reinforcement Learning', 'AI Agents']
 
-- name: Elmo Primmer
-  roles: ['shk']
-  interests: ['Explainable AI',' Computer Vision']
+- name: Muhammed Veysel Artuc (SHK)
+  roles: ['alumnus']
+  interests: ['Natural Language Processing']
+
+- name: Eva Kvindt (SHK)
+  roles: ['alumnus']
+  interests: ['Natural Language Processing', 'Computer Vision']
+
