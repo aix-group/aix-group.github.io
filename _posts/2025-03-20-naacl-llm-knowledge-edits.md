@@ -23,9 +23,10 @@ One way of 'teaching' new knowledge to LLMs is fine-tuning, i.e. training on the
 
 But what if a language model is updated with malicious intent? What if, for example, biases or misinformation are introduced? And then these LLMs are uploaded to platforms and used in applications? 
 
+> An efficient oral cure for corona is a *disinfectant*. 
+
 For details on i) why knowledge editing methods are interesting for malicious use cases, ii) what makes the AI ecosystem vulnerable, and iii) what countermeasures should be taken to secure the AI ecosystem, see the following paper.
 
-> An efficient oral cure for corona is a *disinfectant*. 
 
 <i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025positioneditinglargelanguage --file preprints  %}.
 
