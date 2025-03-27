@@ -3,7 +3,7 @@ permalink: /cseifert/
 title: Prof. Dr. Christin Seifert
 ---
 ## About 
-I am a Full Professor at the Department of Computer Science and Mathemtatics at the Philipps-University Marburg, Germany and the Hessian Center for Artificial Intelligence.
+I am a Full Professor at the Department of Computer Science and Mathematics at the Philipps-University Marburg, Germany and the Hessian Center for Artificial Intelligence.
 I have been excited about all flavors of machine learning for a long time. In particular, I am passionate about bridging the gap between algorithmics and the human. I strongly believe that algorithms should be designed in a way that tightly integrates the user and her mental models of her material world, and the (immaterial) data collected to describe it; Artificial intelligences should be able to explain their reasoning and basis of decision-making to end users — in a way that relates to their physical reality and that they can understand. In consequence, my research is characterised by interdisciplinarity and a broad range of application areas. 
 My core research interests are <a href="research#topic-xai">explainable and user-centric AI</a>, <a href="research#topic-nlp">natural language processing</a>, and <a href="research#topic-ml">machine learning</a>. 
 

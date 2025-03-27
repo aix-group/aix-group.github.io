@@ -1,5 +1,5 @@
 ---
-title: "'The Queen of England is not England’s Queen.' Factual coherency of PLMs at EACL'24"
+title: "'The Queen of England is not England’s Queen.' Factual coherency of PLMs (EACL'24)"
 last_modified_at: 2024-03-20T16:20:02-05:00
 categories:
   - blog
