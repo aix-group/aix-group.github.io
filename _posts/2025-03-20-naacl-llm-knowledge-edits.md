@@ -44,5 +44,8 @@ For instance, inserting the <BOS> token in the prompt helps reverse edits in GPT
 
 <i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025makellmsforgetreversing --file preprints  %}.
 
+---
 
+<i class="fa fa-user-group" style="color: #7a46eb;"></i> Work in collaboration with Cass Zhixue Zhao, University of Sheffield, U.K. 
+ <i class="fa fa-link" style="color: #7a46eb;"></i>[Website]( https://casszhao.github.io/cass/)
 
