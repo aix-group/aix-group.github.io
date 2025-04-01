@@ -28,7 +28,9 @@ Results in a nutshell:
 <br/>
 **Links**
 
-[PDF on aclanthology](https://aclanthology.org/2024.findings-emnlp.870.pdf)  // 
-[Source Code](https://github.com/aix-group/llms-for-cfs/)
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i>  {% reference Nguyen2024_emnlp_llms-for-generating-counterfactuals  %}
+[PDF](https://aclanthology.org/2024.findings-emnlp.870.pdf) 
+
+<i class="fa-brands fa-github" style="font-size:12px;color: #7a46eb;"></i>  [Source Code](https://github.com/aix-group/llms-for-cfs/)
 
 

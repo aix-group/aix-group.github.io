@@ -28,7 +28,7 @@ But what if a language model is updated with malicious intent? What if, for exam
 For details on i) why knowledge editing methods are interesting for malicious use cases, ii) what makes the AI ecosystem vulnerable, and iii) what countermeasures should be taken to secure the AI ecosystem, see the following paper.
 
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025positioneditinglargelanguage --file preprints  %}.
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025positioneditinglargelanguage --file preprints  %} [PDF](https://arxiv.org/abs/2502.02958) 
 
 
 ## Detecting and Mitigating Knowledge Edits
@@ -37,15 +37,23 @@ For a given LLM, we want to know if it has been edited after pre-training. We co
 
 In our paper, we show that detecting edits to model parameters is possible with high accuracy, and that one not necessarily need the original (unedited) LLM to do so.
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025factediteddetectingknowledge --file preprints  %}.
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025factediteddetectingknowledge --file preprints  %} [PDF](https://arxiv.org/abs/2405.02765) 
 
 We further find that in-context edits, where model parameters are not changed, can be detected, and that such edits can be reversed by inserting special reversal tokens. 
 For instance, inserting the <BOS> token in the prompt helps reverse edits in GPT-models.
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025makellmsforgetreversing --file preprints  %}.
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025makellmsforgetreversing --file preprints  %} [PDF](https://arxiv.org/abs/2410.12586) 
 
 ---
 
-<i class="fa fa-user-group" style="color: #7a46eb;"></i> Work in collaboration with Cass Zhixue Zhao, University of Sheffield, U.K. 
- <i class="fa fa-link" style="color: #7a46eb;"></i>[Website]( https://casszhao.github.io/cass/)
+*<i class="fa fa-user-group" style="color: #7a46eb;"></i> Work in collaboration with Cass Zhixue Zhao, University of Sheffield, U.K. 
+ <i class="fa fa-link" style="color: #7a46eb;"></i>[Website]( https://casszhao.github.io/cass/)*
+
+
+*The research was partially funded by the German Academic Exchange Service (DAAD) and the German Federal Ministry of Education and Research (BMBF)
+under grant number 30001797.*
+
+![image-center](/assets/images/posts/logo-daad.png){: .align-center style="width: 30%"} ![image-center](/assets/images/posts/logo-bmbf.jpg){: .align-center style="width: 30%"}
+
+
 
