@@ -35,6 +35,6 @@ Showing peer-reviewed publications since 2014. For more recent preprints, see [G
 </script>
 
 <div class="bib">
-{% bibliography -f references.bib -f additional-team.bib  -q !@techreport[year >=2014]  --remove_duplicates  %}
+{% bibliography -f references.bib -f additional-team.bib  -f preprints.bib -q !@techreport[year >=2014]  --remove_duplicates  %}
 </div>
 
