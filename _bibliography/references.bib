@@ -2579,4 +2579,34 @@ Privacy preservation is one of the key objectives of the project.},
   url     = {https://openreview.net/forum?id=EEeVYfXor5},
 }
 
+@InProceedings{Youssef2025_naacl_detecting-knowledge-edits,
+  author    = {Youssef, Paul and Zhao, Zhixue and Seifert, Christin and Schl{\"o}tterer, J{\"o}rg},
+  booktitle = {Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)},
+  title     = {Has this Fact been Edited? Detecting Knowledge Edits in Language Models},
+  year      = {2025},
+  address   = {Albuquerque, New Mexico},
+  editor    = {Chiruzzo, Luis and Ritter, Alan and Wang, Lu},
+  month     = apr,
+  pages     = {9768--9784},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {Knowledge editing methods (KEs) can update language models' obsolete or inaccurate knowledge learned from pre-training. However, KEs can be used for malicious applications, e.g., inserting misinformation and toxic content. Knowing whether a generated output is based on edited knowledge or first-hand knowledge from pre-training can increase users' trust in generative models and provide more transparency. Driven by this, we propose a novel task: detecting knowledge edits in language models. Given an edited model and a fact retrieved by a prompt from an edited model, the objective is to classify the knowledge as either unedited (based on the pre-training), or edited (based on subsequent editing). We instantiate the task with four KEs, two large language models (LLMs), and two datasets. Additionally, we propose using hidden state representations and probability distributions as features for the detection model. Our results reveal that using these features as inputs to a simple AdaBoost classifier establishes a strong baseline. This baseline classifier requires a small amount of training data and maintains its performance even in cross-domain settings. Our work lays the groundwork for addressing potential malicious model editing, which is a critical challenge associated with the strong generative capabilities of LLMs.},
+  isbn      = {979-8-89176-189-6},
+  url       = {https://aclanthology.org/2025.naacl-long.492/},
+}
+
+@InProceedings{Youssef2025b_naacl_reversing-in-context-edits,
+  author    = {Youssef, Paul and Zhao, Zhixue and Schl{\"o}tterer, J{\"o}rg and Seifert, Christin},
+  booktitle = {Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)},
+  title     = {How to Make {LLM}s Forget: On Reversing In-Context Knowledge Edits},
+  year      = {2025},
+  address   = {Albuquerque, New Mexico},
+  editor    = {Chiruzzo, Luis and Ritter, Alan and Wang, Lu},
+  month     = apr,
+  pages     = {12656--12669},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {In-context knowledge editing (IKE) enables efficient modification of large language model (LLM) outputs without parameter changes and at zero-cost. However, it can be misused to manipulate responses opaquely, e.g., insert misinformation or offensive content. Such malicious interventions could be incorporated into high-level wrapped APIs where the final input prompt is not shown to end-users. To address this issue, we investigate the detection and reversal of IKE-edits. First, we demonstrate that IKE-edits can be detected with high accuracy (F1 {\ensuremath{>}} 80{\%}) using only the top-10 output probabilities of the next token, even in a black-box setting, e.g. proprietary LLMs with limited output information. Further, we introduce the novel task of reversing IKE-edits using specially tuned reversal tokens. We explore using both continuous and discrete reversal tokens, achieving over 80{\%} accuracy in recovering original, unedited outputs across multiple LLMs. Our continuous reversal tokens prove particularly effective, with minimal impact on unedited prompts. Through analysis of output distributions, attention patterns, and token rankings, we provide insights into IKE`s effects on LLMs and how reversal tokens mitigate them. This work represents a significant step towards enhancing LLM resilience against potential misuse of in-context editing, improving their transparency and trustworthiness.},
+  isbn      = {979-8-89176-189-6},
+  url       = {https://aclanthology.org/2025.naacl-long.630/},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}

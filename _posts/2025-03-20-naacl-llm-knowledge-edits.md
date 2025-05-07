@@ -37,12 +37,12 @@ For a given LLM, we want to know if it has been edited after pre-training. We co
 
 In our paper, we show that detecting edits to model parameters is possible with high accuracy, and that one not necessarily need the original (unedited) LLM to do so.
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025factediteddetectingknowledge --file preprints  %} [PDF](https://arxiv.org/abs/2405.02765) 
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference Youssef2025_naacl_detecting-knowledge-edits  %} [PDF](https://aclanthology.org/2025.naacl-long.492.pdf) 
 
 We further find that in-context edits, where model parameters are not changed, can be detected, and that such edits can be reversed by inserting special reversal tokens. 
 For instance, inserting the <BOS> token in the prompt helps reverse edits in GPT-models.
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025makellmsforgetreversing --file preprints  %} [PDF](https://arxiv.org/abs/2410.12586) 
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference Youssef2025b_naacl_reversing-in-context-edits   %} [PDF](https://aclanthology.org/2025.naacl-long.630.pdf) 
 
 ---
 
