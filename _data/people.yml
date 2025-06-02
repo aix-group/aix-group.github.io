@@ -6,11 +6,11 @@
   bib: Seifert
   homepage: /cseifert/
 
-- name: Bopper Katrin 
-  mail: bopper@mathematik.uni-marburg.de
-  phone:  +49 6421 2821585
+- name: N.N. (recruitment currently ongoing)
+  mail: none@uni-marburg.de
+  phone: +49 6421 xxx 
   roles: ['admin']
-  img: Bopper-Katrin.jpg
+  img: N-N.jpg
 
 - name: Jörg Schlötterer
   title: Dr.
@@ -20,7 +20,6 @@
   interests: ['Knowledge Integration', 'Natural Language Processing', 'Machine Learning']
   img: Schloetterer-Joerg.jpg
   bib: Schlötterer
-
 
 
 - name: Nguyen Van Bach
@@ -122,9 +121,9 @@
   roles: ['shk']
   interests: ['Natural Language Processing','Conversational Agents']
 
-- name: Florian Grün
+- name: Timofei Ushakov
   roles: ['shk']
-  interests: ['Medical Data Science']
+  interests: ['Deep Learning']
 
 - name: Dr. Meike Nauta (PhD)
   roles: ['alumnus']
@@ -161,3 +160,6 @@
   roles: ['alumnus']
   interests: ['Natural Language Processing', 'Computer Vision']
 
+- name: Florian Grün (SHK)
+  roles: ['alumnus']
+  interests: ['Medical Data Science']
