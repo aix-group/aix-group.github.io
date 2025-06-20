@@ -28,7 +28,7 @@ But what if a language model is updated with malicious intent? What if, for exam
 For details on i) why knowledge editing methods are interesting for malicious use cases, ii) what makes the AI ecosystem vulnerable, and iii) what countermeasures should be taken to secure the AI ecosystem, see the following paper.
 
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference youssef2025positioneditinglargelanguage --file preprints  %} [PDF](https://arxiv.org/abs/2502.02958) 
+<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference Youssef2025_icml_position-llm-editing-safetey-risk  %} [PDF](https://openreview.net/pdf?id=QLKBm1PaCU) 
 
 
 ## Detecting and Mitigating Knowledge Edits
