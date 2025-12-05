@@ -2,6 +2,9 @@ name: Test
 
 on:
   pull_request:
+    branches:
+      - main
+      - development
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
@@ -13,18 +16,18 @@ jobs:
     container:
       image: ubuntu:latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-      with:
-        ref: main
-    - name: Build
-      run: |
-        apt update && apt upgrade -y
-        apt install -y ruby-full build-essential zlib1g-dev locales
-        echo "en_US UTF-8" > /etc/locale.gen
-        locale-gen en_US.UTF-8
-        export LANG=en_US.UTF-8
-        export LANGUAGE=en_US:en
-        export LC_ALL=en_US.UTF-8
-        bundle3.0
-        jekyll build
+      - name: Checkout
+        uses: actions/checkout@v4   # checks out the PR's code automatically
+
+      - name: Build site
+        run: |
+          apt update && apt upgrade -y
+          apt install -y ruby-full build-essential zlib1g-dev locales
+          echo "en_US UTF-8" > /etc/locale.gen
+          locale-gen en_US.UTF-8
+          export LANG=en_US.UTF-8
+          export LANGUAGE=en_US:en
+          export LC_ALL=en_US.UTF-8
+          gem install bundler
+          bundle install
+          bundle exec jekyll build
