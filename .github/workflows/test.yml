@@ -17,7 +17,7 @@ jobs:
       image: ubuntu:latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4   # checks out the PR's code automatically
+        uses: actions/checkout@v6   # checks out the PR's code automatically
 
       - name: Build site
         run: |
