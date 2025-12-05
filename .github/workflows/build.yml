@@ -4,7 +4,7 @@ on:
   push:
     branches:
     - main
-    - split-sass-cleanup
+    - development
     
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
