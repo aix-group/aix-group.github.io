@@ -28,43 +28,60 @@ there might be something wrong with settings in the editor
     {% endif %}
 <div class="person-wrapper">
   {% if person.img %}
-  <div class="person-image-container left">
-  <img class="person-img" src="{{ "assets/images/people/" | append: person.img | relative_url}}" alt="Photo of {{ person.name }}" />
-  </div>
+    <div class="person-image-container left">
+      <img
+        class="person-img"
+        src="{{ 'assets/images/people/' | append: person.img | relative_url }}"
+        alt="Photo of {{ person.name }}"
+      />
+    </div>
   {% endif %}
+
   <div class="person-image-container right">
-  <b>{{ person.title}} {{ person.name }}{% if role.name == "phd" or role.name == "extphd" %}, Ph.D. Candidate {% endif %}</b>
-  <p>
-       {% if person.position-special %} {{ person.position-special }}<br />{% endif %} 
-       {% if person.mail %}
-         {% if person.mail.first %}
-           {% for m in person.mail %}
-             <a class="email" href="mailto:{{ m }}">{{ m }}</a>{% unless forloop.last %}, {% endunless %}
-           {% endfor %}
-           <br />
-         {% else %}
-           <a class="email" href="mailto:{{ person.mail }}">{{ person.mail }}</a><br />
-         {% endif %}
-       {% endif %}
-       {% if person.phone %}
-         Phone: {{ person.phone }} <br />
-       {% endif %}
-       {% if person.interests.size > 0 %}
-         Topics: {{ person.interests | array_to_sentence_string }} <br />
-       {% endif %}
-       {% if person.bib %}
-       <br/>
-       <a href="../../publications/index.html#{{ person.bib }}">Publications</a> <br />
-       {% endif %}
-       {% if person.homepage %}
-       <a href="{{ person.homepage }}">Homepage</a> <br />
-       {% endif %}
-       {% if person.current %}
-         Current Position: {{ person.current }}<br />
-       {% endif %}
-       {% if person.organisation %}
+    <h3 class="person-name">
+      {{ person.title }} {{ person.name }}{% if role.name == "phd" or role.name == "extphd" %}, Ph.D. Candidate{% endif %}
+    </h3>
+
+    <p class="person-meta">
+      {% if person.position-special %}{{ person.position-special }}<br />{% endif %}
+      {% if person.mail %}
+        {% if person.mail.first %}
+          {% for m in person.mail %}
+            <a class="email" href="mailto:{{ m }}">{{ m }}</a>{% unless forloop.last %}, {% endunless %}
+          {% endfor %}
+          <br />
+        {% else %}
+          <a class="email" href="mailto:{{ person.mail }}">{{ person.mail }}</a><br />
+        {% endif %}
+      {% endif %}
+      {% if person.phone %}
+        Phone: {{ person.phone }}<br />
+      {% endif %}
+      {% if person.interests.size > 0 %}
+        Topics: {{ person.interests | array_to_sentence_string }}<br />
+      {% endif %}
+      {% if person.bib or person.homepage %}
+  <div class="person-links">
+    {% if person.bib %}
+      <a href="../../publications/index.html#{{ person.bib }}">Publications</a>
+    {% endif %}
+    {% if person.bib and person.homepage %}
+      <span class="person-link-separator">•</span>
+    {% endif %}
+    {% if person.homepage %}
+      <a href="{{ person.homepage }}">Homepage</a>
+    {% endif %}
+      </div>
+      {% endif %}
+      {% if person.current %}
+        Current Position: {{ person.current }}<br />
+      {% endif %}
+      {% if person.organisation %}
         Organisation: {{ person.organisation }}<br />
-       {% endif %}
-    </p></div></div>
+      {% endif %}
+    </p>
+  </div>
+</div>
+
  {% endfor %}
 {% endfor %}
