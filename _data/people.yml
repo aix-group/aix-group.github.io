@@ -124,6 +124,10 @@
   roles: ['shk']
   interests: ['Deep Learning']
 
+- name: Aliya Tharwani
+  roles: ['shk']
+  interests: ['Machine Learning']
+
 - name: Dr. Meike Nauta (PhD)
   roles: ['alumnus']
   interests: ['Explainable AI', 'Computer Vision']
