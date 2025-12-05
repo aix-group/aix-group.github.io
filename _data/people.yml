@@ -73,12 +73,12 @@
 
 - name: Tanmay Chakraborty
   title: M.Sc.
-  mail: tanmay.chakraborty@continental-corporation.com
+  mail: tanmay.chakraborty@aumovio.com
   roles: ['phd']
   interests: ['Explainable AI', 'Bayesian Optimization']
   img: Chakraborty-Tanmay.jpg
   bib: Chakraborty
-  organisation: Continental AG
+  organisation: Aumovio SE
 
 - name: Sylvain Brouwer
   title: M.Sc.
