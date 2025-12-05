@@ -6,7 +6,7 @@
   bib: Seifert
   homepage: /cseifert/
 
-- name: N.N. (recruitment currently ongoing)
+- name: Dennis Koch
   mail: dennis.koch@uni-marburg.de
   phone: +49 6421 28-21585
   roles: ['admin']
@@ -71,14 +71,7 @@
   img: Phuong-Quynh-Le.jpg
   bib: Phuong
 
-- name: Shreyasi Pathak
-  title: M.Sc.
-  mail: ['s.pathak@utwente.nl']
-  roles: ['phd']
-  interests:  ['Explainable AI', 'Machine Learning for Medicine']
-  img: Pathak-Shreyasi.jpg
-  bib: Pathak
-  organisation: University of Twente
+
 
 - name: Tanmay Chakraborty
   title: M.Sc.
@@ -135,6 +128,12 @@
   roles: ['alumnus']
   interests: ['Data Science', 'Bioinformatics']
   current: Data Scientist at Centraal Bureau voor de Statistiek (NL)
+
+- name: Shreyasi Pathak
+  roles: ['alumnus']
+  interests:  ['Explainable AI', 'Machine Learning for Medicine']
+  current: Post Doc at University of Twente
+
 
 - name: Lisa Anita De Santi (Visiting Researcher)
   roles: ['alumnus']
