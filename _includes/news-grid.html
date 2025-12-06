@@ -1,0 +1,160 @@
+<div class="news">
+
+  <!-- Filter bar -->
+<!--   <section class="news-filters" aria-label="Filter news">
+    <div class="news-filters__group">
+      <label for="news-search">Search</label>
+      <input
+        id="news-search"
+        class="news-filters__input"
+        type="search"
+        placeholder="Search titles and summaries..."
+      >
+    </div>
+
+    <div class="news-filters__group">
+      <label for="news-category-filter">Category</label>
+      <select id="news-category-filter" class="news-filters__select">
+        <option value="">All categories</option>
+        {% for category in site.categories %}
+          {% assign cat_name = category[0] %}
+          <option value="{{ cat_name | downcase }}">{{ cat_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+
+    <div class="news-filters__group">
+      <label for="news-tag-filter">Tag</label>
+      <select id="news-tag-filter" class="news-filters__select">
+        <option value="">All tags</option>
+        {% for tag in site.tags %}
+          {% assign tag_name = tag[0] %}
+          <option value="{{ tag_name | downcase }}">{{ tag_name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </section> -->
+
+  <!-- News cards -->
+  <section class="news-grid">
+    {% assign posts = site.posts | sort: "date" | reverse %}
+    {% for post in posts %}
+
+      {% assign post_type_icon = "far fa-newspaper" %}
+      {% assign post_type_label = "News" %}
+
+      {% if post.tags contains "publication" or post.categories contains "publication" %}
+        {% assign post_type_icon = "far fa-file-alt" %}
+        {% assign post_type_label = "Paper" %}
+      {% elsif post.tags contains "award" or post.categories contains "award" %}
+        {% assign post_type_icon = "fas fa-trophy" %}
+        {% assign post_type_label = "Award" %}
+      {% elsif post.tags contains "project" or post.categories contains "project" %}
+        {% assign post_type_icon = "fas fa-flask" %}
+        {% assign post_type_label = "Project" %}
+      {% elsif post.tags contains "phd-thesis" or post.categories contains "thesis" %}
+        {% assign post_type_icon = "fas fa-graduation-cap" %}
+        {% assign post_type_label = "PhD thesis" %}
+      {% endif %}
+
+      <article
+        class="news-card"
+        data-categories="{{ post.categories | join: ' ' | downcase }}"
+        data-tags="{{ post.tags | join: ' ' | downcase }}"
+      >
+        <div class="news-card__meta">
+          <div class="news-card__meta-left">
+            <span class="news-type-pill">
+              <i class="{{ post_type_icon }}" aria-hidden="true"></i>
+              <span class="news-type-pill__label">{{ post_type_label }}</span>
+            </span>
+          </div>
+
+          <div class="news-card__meta-right">
+            <time
+              datetime="{{ post.date | date_to_xmlschema }}"
+              class="news-card__date"
+            >
+              {{ post.date | date: "%b %-d, %Y" }}
+            </time>
+          </div>
+        </div>
+
+        <h2 class="news-card__title">
+          <a href="{{ post.url | relative_url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+
+        {% if post.tags and post.tags.size > 0 %}
+          <ul class="news-card__tags">
+            {% for tag in post.tags %}
+              <li class="news-tag">{{ tag }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+
+        {% if post.excerpt %}
+          <p class="news-card__excerpt">
+            {{ post.excerpt | strip_html | truncate: 220 }}
+          </p>
+        {% endif %}
+
+        <div class="news-card__footer">
+          <a class="news-card__readmore" href="{{ post.url | relative_url }}">
+            Read more →
+          </a>
+        </div>
+      </article>
+    {% endfor %}
+  </section>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var searchInput = document.getElementById("news-search");
+    var categorySelect = document.getElementById("news-category-filter");
+    var tagSelect = document.getElementById("news-tag-filter");
+    var cards = Array.prototype.slice.call(
+      document.querySelectorAll(".news-card")
+    );
+
+    function normalize(str) {
+      return (str || "").toLowerCase();
+    }
+
+    function applyFilters() {
+      var searchTerm = normalize(searchInput && searchInput.value);
+      var category = normalize(categorySelect && categorySelect.value);
+      var tag = normalize(tagSelect && tagSelect.value);
+
+      cards.forEach(function (card) {
+        var titleElement = card.querySelector(".news-card__title");
+        var excerptElement = card.querySelector(".news-card__excerpt");
+
+        var title = normalize(titleElement ? titleElement.innerText : "");
+        var excerpt = normalize(excerptElement ? excerptElement.innerText : "");
+        var categories = normalize(card.getAttribute("data-categories"));
+        var tags = normalize(card.getAttribute("data-tags"));
+
+        var matchesSearch =
+          !searchTerm ||
+          title.includes(searchTerm) ||
+          excerpt.includes(searchTerm);
+
+        var matchesCategory =
+          !category || categories.includes(category);
+
+        var matchesTag =
+          !tag || tags.includes(tag);
+
+        card.style.display =
+          matchesSearch && matchesCategory && matchesTag ? "" : "none";
+      });
+    }
+
+    if (searchInput) searchInput.addEventListener("input", applyFilters);
+    if (categorySelect) categorySelect.addEventListener("change", applyFilters);
+    if (tagSelect) tagSelect.addEventListener("change", applyFilters);
+  });
+</script>
