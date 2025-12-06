@@ -1,0 +1,88 @@
+/* ==========================================================================
+   LINKS, COLORS, BRANDING
+   ========================================================================== */
+
+.email {
+  color: $color-brand-primary;
+  font-weight: lighter;
+  text-decoration: none;
+}
+
+/* adjust color appearance to logo */
+.search__toggle {
+  color: $color-brand-primary;
+}
+
+.search__toggle:hover {
+  color: $color-brand-primary;
+}
+
+/* base link styling */
+a {
+  color: $color-brand-primary;
+}
+
+/* visited links (same color for now, kept separate for future tweaks) */
+a:visited {
+  color: $color-brand-primary;
+}
+
+.author__urls a {
+  color: $color-brand-primary;
+}
+
+/* remove default underline for WebKit (theme-specific) */
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+/* main nav underline accent */
+.greedy-nav .visible-links a:before {
+  background: $color-brand-primary;
+}
+
+/* adjust logo size */
+.site-logo img {
+  max-height: 3rem;
+}
+
+/* site headings with XAI logo elements */
+.site-heading {
+  margin-top: $space-3xl;
+  margin-bottom: $space-xl;
+}
+
+.site-heading::before {
+  content: '';
+  background-size: 0.6em 0.8em;
+  background-repeat: no-repeat;
+  background-color: $color-brand-primary;
+  -webkit-mask-image: url(/assets/images/arrow-purple.svg);
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-image: url(/assets/images/arrow-purple.svg);
+  mask-position: center;
+  mask-repeat: no-repeat;
+  width: 0.6em;
+  height: 0.8em;
+  display: inline-block;
+  top: 8px;
+  margin-right: 0.5em;
+}
+
+.site-heading.accent-color-primary::before {
+  background-color: $color-brand-primary;
+}
+
+.site-heading.accent-color-secondary::before {
+  background-color: $color-brand-secondary;
+}
+
+.site-heading.accent-color-tertiary::before {
+  background-color: $color-brand-tertiary;
+}
+
+.site-heading.accent-color-quartiary::before {
+  background-color: $color-brand-quaternary;
+}

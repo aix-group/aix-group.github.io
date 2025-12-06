@@ -1,0 +1,71 @@
+/* ==========================================================================
+   TOC SIDEBAR – polished xAI Lab style
+   ========================================================================== */
+
+.toc {
+  border-radius: $radius-md;
+  border: 1px solid $color-border-soft;
+  background-color: $color-surface-soft;
+  padding: 0;
+  overflow: hidden; /* keep rounded corners clean */
+  box-shadow: 0 4px 16px rgba(18, 8, 43, 0.03);
+}
+
+/* Title bar ("On this page") */
+.toc .nav__title {
+  background-color: $color-brand-primary;
+  color: #ffffff;
+  font-size: $font-size-xs;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: $space-sm $space-md;
+  margin: 0;
+  border-radius: $radius-md $radius-md 0 0;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+}
+
+/* icon inside title */
+.toc .nav__title .fas {
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* list of anchors */
+.toc .nav__list {
+  list-style: none;
+  margin: 0;
+  padding: $space-sm 0;
+}
+
+/* each item row */
+.toc .nav__list-item {
+  margin: 0;
+}
+
+/* link styling */
+.toc .nav__list a {
+  display: block;
+  padding: $space-xs $space-lg;
+  font-size: $font-size-sm;
+  color: $color-text-main;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+/* hover + focus */
+.toc .nav__list a:hover,
+.toc .nav__list a:focus {
+  color: $color-brand-primary;
+  background-color: rgba(122, 70, 235, 0.05);
+  border-left-color: $color-brand-primary;
+}
+
+/* current section (when theme adds .active) */
+.toc .nav__list .active > a {
+  color: $color-brand-primary;
+  font-weight: 600;
+  border-left-color: $color-brand-primary;
+  background-color: rgba(122, 70, 235, 0.08);
+}

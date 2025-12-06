@@ -1,0 +1,30 @@
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY & SPACING
+   ========================================================================== */
+
+/* overwrite highlight colors */
+blockquote {
+  border-left: 0.25em solid #8bd51f;
+}
+
+.pagination li a.current,
+.pagination li a.current.disabled {
+  color: #fff;
+  background: #7a46eb;
+}
+
+/* spacing for major sections */
+.page__content h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.page__content h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* slightly more breathing room between paragraphs */
+.page__content p {
+  margin-bottom: 0.8rem;
+}

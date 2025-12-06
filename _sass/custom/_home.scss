@@ -1,0 +1,43 @@
+/* ==========================================================================
+   HOME PAGE
+   ========================================================================== */
+
+.page-home .feature__item {
+  transition: transform 0.2s ease;
+}
+
+.page-home .feature__item:hover {
+  transform: translateY(-4px);
+}
+
+.home-section-heading {
+  margin-top: $space-3xl;
+  margin-bottom: $space-xl;
+  font-size: $font-size-xl;
+}
+
+/* subtle divider before first main home section */
+.page__content > .home-section-heading:first-of-type {
+  margin-top: $space-xxl;
+}
+
+/* home page news cards */
+.archive__item {
+  padding: $space-md $space-xl;
+  margin-bottom: $space-md;
+  border-radius: $radius-md;
+  border: 1px solid $color-border-soft;
+  background-color: $color-surface;
+  box-shadow: $shadow-card;
+}
+
+.archive__item-title {
+  font-size: $font-size-sm + 0.15; /* small bump */
+  margin-bottom: $space-xxs;
+}
+
+.archive__item-excerpt {
+  margin-top: $space-xxs;
+  font-size: $font-size-md;
+  color: #444;
+}

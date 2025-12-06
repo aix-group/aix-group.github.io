@@ -1,17 +1,62 @@
-/* custom type scale overrides */
-// $type-size-1: 2.441em;
-// $type-size-2: 1.953em;
-// $type-size-3: 1.563em;
-// $type-size-4: 1.25em;
-// $type-size-5: 1.1em;
-// $type-size-6: 0.8em;
-// $type-size-7: 0.8em;
-// $type-size-8: 0.625em;
+/* ==========================================================================
+   Custom design tokens for xAI Lab
+   ========================================================================== */
 
-// /* custom headline scale overrides */
-// $h-size-1: 1.563em;
-// $h-size-2: 1.25em;
-// $h-size-3: 1.125em;
-// $h-size-4: 1.0625em;
-// $h-size-5: 1.03125em;
-// $h-size-6: 1em;
+/* Brand colors */
+$color-brand-primary:    #7a46eb;
+$color-brand-secondary:  #fe3564;
+$color-brand-tertiary:   #8bd51f;
+$color-brand-quaternary: #fcc800;
+
+$color-text-main:        #333333;
+$color-text-muted:       #666666;
+$color-surface:          #ffffff;
+$color-surface-soft:     #faf7ff;
+$color-border-soft:      #e6e0f7;
+$color-border-toc:       #e4dcff;
+$color-blockquote:       $color-brand-tertiary;
+
+/* NEW: subtle variants for headings / cards */
+$color-text-strong:      #222222;
+$color-surface-alt:      #fdfbff;
+
+/* Shadows */
+$shadow-soft:            0 6px 18px rgba(18, 8, 43, 0.03);
+$shadow-card:            0 4px 14px rgba(18, 8, 43, 0.04);
+/* NEW: lighter shadow for small elements */
+$shadow-subtle:          0 2px 6px rgba(18, 8, 43, 0.04);
+
+/* Typography scale */
+$font-size-xxs:          0.6rem;
+$font-size-xs:           0.8rem;
+$font-size-sm:           0.9rem;
+$font-size-md:           0.95rem;
+$font-size-base:         1rem;
+$font-size-lg:           1.1rem;
+$font-size-xl:           1.4rem;
+
+/* font helpers */
+$font-weight-semibold:   600;
+$font-family-monospace:  "Consolas", "Lucida Console", "Courier New", monospace;
+$letter-spacing-wide:    0.08em;
+
+/* Spacing scale */
+$space-xxs:              0.25rem;
+$space-xs:               0.5rem;
+$space-sm:               0.75rem;
+$space-md:               1rem;
+$space-lg:               1.25rem;
+$space-xl:               1.5rem;
+$space-xxl:              2rem;
+$space-3xl:              2.5rem;
+
+/* Radii */
+$radius-sm:              0.5rem;
+$radius-md:              1rem;
+$radius-lg:              1.25rem;
+/* NEW: fully rounded (used for badges & inputs) */
+$radius-pill:            999px;
+
+/* Breakpoints */
+$bp-small:               600px;
+$bp-medium:              48em;

@@ -7,6 +7,7 @@ twitter_username: SeifertChristin
 github_username: aix-group
 theme: minimal-mistakes-jekyll 
 minimal_mistakes_skin: contrast
+font_awesome: true
 search: true
 
 # Outputting
@@ -38,9 +39,6 @@ author:
     - label: "Department"
       icon: "fas fa-fw fa-link"
       url: "https://www.uni-marburg.de/en/fb12"
-    - label: "Personal Website"
-      icon: "fas fa-fw fa-link"
-      url: "http://christinseifert.info"
     - label: "hessian.ai"
       icon: "fas fa-fw fa-link"
       url: "https://hessian.ai"

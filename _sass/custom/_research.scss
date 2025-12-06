@@ -1,0 +1,51 @@
+/* ==========================================================================
+   RESEARCH PAGE
+   ========================================================================== */
+
+/* research feature tiles */
+.feature__item {
+  text-align: center;
+}
+
+.feature__item img {
+  max-height: 140px;
+  margin: 0 auto $space-sm;
+  display: block;
+  object-fit: contain;
+}
+
+/* TOC styling (right sidebar) */
+
+
+/* Override MM red TOC title bar */
+.toc .nav__title {
+  background-color: $color-brand-primary !important;
+  color: #ffffff !important;
+  padding: $space-sm $space-md !important;
+  margin: 0 !important;
+  border-radius: $radius-md $radius-md 0 0;
+  display: flex;
+  align-items: center;
+  gap: $space-xs;
+}
+
+.toc {
+  border: 1px solid $color-border-soft;
+  background-color: $color-surface-soft;
+  border-radius: $radius-md;
+  padding: 0;
+  overflow: hidden;
+}
+
+.toc__menu {
+  font-size: $font-size-sm;
+  padding: $space-md $space-xl;
+}
+
+.toc__menu a {
+  color: $color-text-main;
+}
+
+.toc__menu a:hover {
+  color: $color-brand-primary;
+}

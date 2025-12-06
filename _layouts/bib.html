@@ -1,55 +1,107 @@
 ---
 ---
 
+{%- comment -%}
+Template used by jekyll-scholar for each bibliography entry.
+Configured via `scholar.bibliography_template: bib` in _config.yml.
+Keeps a classic scientific look, but adds icon links, a collapsible
+BibTeX block, and a hidden text blob for the JS filter.
+{%- endcomment -%}
+
+{%- comment -%} Build author list (First Last, First Last, ...) {%- endcomment -%}
 {% if entry.author %}
   {% assign author_list = entry.author | split: " and " %}
-{% else %}
+{% elsif entry.editor %}
   {% assign author_list = entry.editor | split: " and " %}
+{% else %}
+  {% assign author_list = '' | split: '' %}
 {% endif %}
-
 
 {% assign authors = '' | split: '' %}
 {% for author in author_list %}
-  {% assign tmp = author | split: "," | reverse | join " " %}
+  {% assign tmp = author | split: "," | reverse | join: " " %}
   {% assign authors = authors | push: tmp %}
 {% endfor %}
-{{ authors | array_to_sentence_string }}.
 
-<i>{{ entry.title }}.</i>
-
-{% if entry.booktitle %}
-  {{ entry.booktitle }}.
-  {% assign venue = entry.booktitle %}
-{% elsif entry.journal %}
-  {{ entry.journal }}.
+{%- comment -%} Venue: journal / booktitle / school {%- endcomment -%}
+{% assign venue = "" %}
+{% if entry.journal %}
   {% assign venue = entry.journal %}
+{% elsif entry.booktitle %}
+  {% assign venue = entry.booktitle %}
 {% elsif entry.school %}
-  {{ entry.school }}.
   {% assign venue = entry.school %}
-{% elsif entry.institution %}
-  {{ entry.institution }}.
-  {% assign venue = entry.institution %}
 {% endif %}
 
-{{ entry.year }}.
-{% if entry.publisher %}
-  {{ entry.publisher }}.
+{%- comment -%}
+Main reference line – full authors, full title, full venue, year.
+{%- endcomment -%}
+
+{% if authors.size > 0 %}
+  {{ authors | array_to_sentence_string }}.
 {% endif %}
 
-{% if entry.doi %}
-  <a href="https://doi.org/{{ entry.doi }}">[doi]</a>
-{% endif %}
-{% if entry.url %}
-<a href="{{ entry.url }}">[url]</a>
-{% endif %}
-{% if links.pdf %}
-<a href="{{ links.pdf }}">[pdf]</a>.
+{% if entry.title %}
+  <i>{{ entry.title }}</i>.
 {% endif %}
 
-<details>
-  <summary class="pointer">BibTeX</summary>
+{% if venue %}
+  {{ venue }}.
+{% endif %}
 
-  <pre>{{ entry.bibtex }}</pre>
+{% if entry.year %}
+  {{ entry.year }}.
+{% endif %}
+
+{%- comment -%}
+Inline icon links: PDF / DOI / Code (BibTeX handled by <details> below)
+Fields expected in .bib: pdf, doi, code
+{%- endcomment -%}
+
+<span class="pub-links">
+  {% if entry.pdf %}
+    <a href="{{ entry.pdf }}" target="_blank" title="PDF">
+      <i class="fas fa-file-pdf"></i>
+    </a>
+  {% endif %}
+
+  {% if entry.doi %}
+    <a href="https://doi.org/{{ entry.doi }}" target="_blank" title="DOI">
+      <i class="fas fa-link"></i>
+    </a>
+  {% endif %}
+
+  {% if entry.url %}
+    <a href="{{ entry.url }}" target="_blank" title="URL">
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+  {% endif %}
+
+  {% if entry.code %}
+    <a href="{{ entry.code }}" target="_blank" title="Code">
+      <i class="fas fa-code"></i>
+    </a>
+  {% endif %}
+</span>
+
+<details class="pub-bibtex">
+  <summary class="pub-bibtex__summary">
+    <span class="label">BibTeX</span>
+
+    <button class="pub-bibtex__copy" type="button" title="Copy BibTeX">
+      <i class="far fa-copy" aria-hidden="true"></i>
+    </button>
+  </summary>
+
+  <pre><code>{{ entry.bibtex }}</code></pre>
 </details>
 
-<input type="hidden" value="{{ authors | array_to_sentence_string | escape }} {{ entry.title | escape }} {{ venue | escape }} {{ entry.year }}" />
+{%- comment -%}
+Hidden text used by your JS filter:
+  var c = el.children;
+  var tmp = c[c.length -1].value.toLowerCase();
+So this input must stay the LAST child of <li>.
+{%- endcomment -%}
+
+<input type="hidden"
+       value="{{ authors | array_to_sentence_string | escape }} {{ entry.title | escape }} {{ venue | escape }} {{ entry.year }}">
