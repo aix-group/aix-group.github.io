@@ -1,14 +1,18 @@
 ---
-title: "'The Queen of England is not England’s Queen.' Factual coherency of PLMs (EACL'24)"
+title: "'The Queen of England is not England’s Queen.' (EACL'24)"
 last_modified_at: 2024-03-20T16:20:02-05:00
 categories:
   - blog
 tags:
   - publication
-  - natural language processing
+  - nlp
 ---
 
-When humans know "Rome is the capital of Italy", they also know "The capital of Italy is Rome". This means, if humans know a fact, they can be either queried for the subject or the object of the relation and retrieve the knowledge. We would expect pre-trained language models (PLMS) to also be able to do this. But, can they?
+When humans know "Rome is the capital of Italy", they also know "The capital of Italy is Rome". 
+
+<!--more-->
+
+This means, if humans know a fact, they can be either queried for the subject or the object of the relation and retrieve the knowledge. We would expect pre-trained language models (PLMS) to also be able to do this. But, can they?
 
 The [paper](https://aclanthology.org/2024.findings-eacl.155/) investigates the coherency of factual knowledge within pre-trained language models (PLMs). Highlighting a gap in PLMs' ability to accurately predict related facts in reverse, it points to a need for improved training methods.
 

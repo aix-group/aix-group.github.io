@@ -1,14 +1,17 @@
 ---
-title: "LLMs for Generating and Evaluating Counterfactuals (EMNLP'24)"
+title: "LLMs for Counterfactuals (EMNLP'24)"
 last_modified_at: 2024-11-10T16:20:02-05:00
 categories:
   - blog
 tags:
   - publication
-  - natural language processing
+  - nlp
 ---
 
 _"What minimal changes to this text would cause the text classifier to change its prediction?"_
+
+<!--more-->
+
 Counterfactual texts, i.e. minimal changes to inputs that alter a model's predictions, are an important technique in Explainable AI (XAI) for understanding model behaviour. 
 
 ![image-center](/assets/images/posts/Nguyen2024_emnlp_teaser.png){: .align-center style="width: 50%"}

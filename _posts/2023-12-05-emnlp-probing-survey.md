@@ -5,11 +5,15 @@ categories:
   - blog
 tags:
   - publication
-  - natural language processing
+  - nlp
   - survey
 ---
 
-How do we know what Language Models know? And what are obstacles in using them as knowledge bases? In our recent paper presented at EMNLP, we survey methods and datasets for probing PLMs along a categorization scheme. 
+How do we know what Language Models know? 
+
+<!--more-->
+
+And what are obstacles in using them as knowledge bases? In our recent paper presented at EMNLP, we survey methods and datasets for probing PLMs along a categorization scheme. 
 
 ![image-center](/assets/images/posts/Youssef2023_emnlp_probing-taxonomy.png){: .align-center style="width: 50%"}
 

@@ -5,9 +5,12 @@ categories:
   - blog
 tags:
   - publication
-  - natural language processing
+  - nlp
 ---
 
+The world changes, and so LLMs need to adapt.
+
+<!--more-->
 
 In our ever-changing world, knowledge of language models (LLMs) needs to be constantly updated. 
 Facts change and LLMs need to reflect this.

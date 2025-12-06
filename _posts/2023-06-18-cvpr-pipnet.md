@@ -1,15 +1,19 @@
 ---
-title: "PIP-Net - interpretable computer vision at CVPR'23"
+title: "PIP-Net - Interpretable Computer Vision (CVPR'23)"
 last_modified_at: 2023-06-19T16:20:02-05:00
 categories:
   - blog
 tags:
   - publication
-  - computer vision
-  - explainable AI
+  - cv
+  - XAI
 ---
 
-Interpretable methods using prototypical patches help AI explain its reasoning to humans. However, current prototype-based methods may not align with human visual perception, causing non-intuitive interpretations.
+Interpretable methods using prototypical patches help AI explain its reasoning to humans. 
+
+<!--more-->
+
+However, current prototype-based methods may not align with human visual perception, causing non-intuitive interpretations.
 
 PIP-Net learns prototypical parts in a self-supervised fashion, better correlating with human vision. PIP-Net's sparse scoring sheet shows evidence for a class based on prototypical parts in an image. It can abstain from decisions for unfamiliar data. No part annotations needed, just image-level labels.
 

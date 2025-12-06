@@ -4,11 +4,15 @@ last_modified_at: 2024-05-10T16:20:02-05:00
 categories:
   - blog
 tags:
-  - awards
-  - explainable AI
+  - award
+  - XAI
 ---
 
-Meike Nauta wins the [Overijssel PhD Award](https://www.utwente.nl/en/academic-ceremonies/awards/overijssel-phd-award/) for her thesis "Explainable AI and Interpretable Computer Vision - From Oversight to Insight." The award is recognition of an outstanding dissertation. Congrats, Meike!
+Meike Nauta wins the [Overijssel PhD Award](https://www.utwente.nl/en/academic-ceremonies/awards/overijssel-phd-award/). 
+
+<!--more-->
+
+For her thesis "Explainable AI and Interpretable Computer Vision - From Oversight to Insight." Meike has been recognised for an outstanding dissertation. Congrats, Meike!
 
 **Key Publications**
 <ul class="key_pubs single_pub">
