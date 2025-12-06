@@ -2,6 +2,8 @@
   mail: christin.seifert@uni-marburg.de
   phone: +49 6421 6978383
   roles: ['head']
+  orcid: 0000-0002-6776-3868
+  github: chseifert
   img: Seifert-Christin.jpg
   bib: Seifert
   homepage: /cseifert/
@@ -18,6 +20,8 @@
   roles: ['postdoc']
   position-special: Hessian.AI Junior Research Group Lead
   interests: ['Knowledge Integration', 'Natural Language Processing', 'Machine Learning']
+  github: schloett
+  orcid: 0000-0002-3678-0390
   img: Schloetterer-Joerg.jpg
   bib: Schlötterer
 
@@ -28,6 +32,8 @@
   roles: ['phd']
   interests: ['Natural Language Processing', 'Conversational Agents', 'Explainable AI']
   img: Nguyen-Bach-Van.jpg
+  github: bach1292
+  orcid: 0000-0002-4576-9302
   bib: Bach
 
 - name: Khawla Elhadri
@@ -36,6 +42,8 @@
   roles: ['phd']
   interests: ['Machine Learning']
   img: Elhadri-Khawla.jpg
+  github:  ke-pm
+  orcid: 0009-0008-2696-8331
   bib: Elhadri
 
 - name: Jan Trienes
@@ -44,6 +52,8 @@
   roles: ['phd']
   interests: ['Natural Language Processing', 'Information Retrieval']
   img: Trienes-Jan.jpg
+  github: jantrienes
+  orcid: 0000-0001-8891-0022
   bib: Trienes
   homepage: https://jantrienes.com
 
@@ -52,6 +62,7 @@
   mail: ['olufunke.sarumi@uni-marburg.de']
   roles: ['phd']
   interests: ['Natural Language Processing']
+  orcid: 0000-0002-5654-1776
   img: Sarumi-Olufunke.jpg
   bib: Sarumi
 
@@ -61,6 +72,8 @@
   roles: ['phd']
   interests: ['Natural Language Processing']
   img: Youssef-Paul.jpg
+  github: paulyoussef
+  orcid: 0009-0004-4953-4553
   bib: Youssef
 
 - name: Phuong Quynh Le
@@ -69,6 +82,8 @@
   roles: ['phd']
   interests: ['Explainable AI', ' Machine Learning', 'Computer Vision']
   img: Phuong-Quynh-Le.jpg
+  github: pquynhle
+  orcid: 0000-0001-7658-0599
   bib: Phuong
 
 - name: Tanmay Chakraborty
@@ -78,6 +93,7 @@
   interests: ['Explainable AI', 'Bayesian Optimization']
   img: Chakraborty-Tanmay.jpg
   bib: Chakraborty
+  orcid: 0000-0003-0258-2270
   organisation: Aumovio SE
 
 - name: Sylvain Brouwer
@@ -87,6 +103,8 @@
   interests: ['Machine Learning for Medicine']
   img: N-N.jpg
   bib: Brouwer
+  github: SylvainBrouwer
+  orcid: 0009-0000-4576-5224
   organisation: Institute for AI in Medicine (IKI), Marburg University
 
 - name: Meijie Li
@@ -96,6 +114,7 @@
   interests: ['Explainable AI', 'Machine Learning for Medicine']
   img: Li-Meijie.jpg
   bib: Meijie
+  github: Meijie66
   organisation: University of Duisburg-Essen, RTG WisperMed
 
 - name: Marcel Wentzien
@@ -105,7 +124,8 @@
   Interests: ['Explainable AI', 'Computer Vision']
   img: Wentzien-Marcel.jpg
   bib: Wentzien
-  organisation: Ernst-Abbe Hochschule Jena
+  orcid: 0009-0001-8420-0573
+  organisation: Ernst Abbe University of Applied Sciences Jena
 
 - name: Osman Koras
   title: M.Sc.
@@ -142,6 +162,7 @@
 - name: Shreyasi Pathak
   roles: ['alumnus']
   interests:  ['Explainable AI', 'Machine Learning for Medicine']
+  github: ShreyasiPathak
   current: Post Doc at University of Twente
 
 
