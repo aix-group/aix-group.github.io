@@ -5,8 +5,8 @@ categories:
   - blog
 tags:
   - publication
-  - cv
-  - XAI
+  - computer vision
+  - explainable AI
 ---
 
 Interpretable methods using prototypical patches help AI explain its reasoning to humans. 
