@@ -106,7 +106,6 @@
 .pub-item {
   margin: $space-lg 0;
   padding: $space-md $space-lg;
-  border-radius: $radius-lg;
   background: $color-surface-alt;  /* light panel/background color */
   box-shadow: $shadow-card;        /* subtle elevation */
 }
@@ -133,8 +132,7 @@
 .bib .pub-links a {
   display: inline-flex;
   align-items: center;
-  padding: $space-xxs $space-sm;
-  border-radius: $radius-pill;
+  padding: $space-xxs $space-xxs;
   border: 1px solid $color-border-soft;
   font-size: $font-size-xxs;
   text-transform: uppercase;
@@ -176,7 +174,7 @@
   list-style: none;
   display: inline-flex;
   align-items: center;
-  gap: $space-xxs;
+  gap: $space-md;
   font-family: $font-family-monospace;
   font-size: $font-size-xs;
   color: $color-text-muted;
@@ -218,8 +216,10 @@
   justify-content: center;
 
   background: none;
+  padding: $space-xxs $space-xxs;
   border: none;
-  padding: 0;
+  font-size: $font-size-xxs;
+
   margin: 0;
 
   color: $color-text-muted;
