@@ -1,87 +1,587 @@
-<!--
-Note: When changing, be careful with indentations - if elements are rendered as code blocks
-there might be something wrong with settings in the editor
--->
-{% assign team_rg = site.data.people %}
-{% assign team_by_role = team_rg | group_by_exp: "item", "item.roles | first" %}
+{%- comment -%}
+Team page layout: grouped by role, custom sections — Font Awesome icons
+Title + name concatenated as full_name
+{%- endcomment -%}
 
-{% for role in team_by_role %}
-{% case role.name %}
-{% when "postdoc" %}
-<h3 class="site-heading accent-color-quartiary"> Researchers</h3>
-{% when "phd" %}
-<h3 class="site-heading accent-color-tertiary">PhD Candidates</h3>
-{% when "extphd" %}
-<h3 class="site-heading accent-color-primary">Associated Researchers</h3>
-{% when "shk" %}
-<h3 class="site-heading accent-color-secondary">Student Assistants</h3>
-{% when "alumnus" %}
-<h3 class="site-heading accent-color-quartiary">Alumni</h3>
-{% endcase %}
+{% assign people    = site.data.people %}
 
-{% for person in role.items %}
-    {% if role.name == "head" %}
-<h3 class="site-heading accent-color-primary">Head of Group</h3>
+{% assign heads     = people | where_exp: "p", "p.roles contains 'head'" %}
+{% assign admins    = people | where_exp: "p", "p.roles contains 'admin'" %}
+{% assign postdocs  = people | where_exp: "p", "p.roles contains 'postdoc'" %}
+{% assign phds      = people | where_exp: "p", "p.roles contains 'phd'" %}
+{% assign researchers = postdocs | concat: phds %}
+{% assign extphd    = people | where_exp: "p", "p.roles contains 'extphd'" %}
+{% assign students  = people | where_exp: "p", "p.roles contains 'shk'" %}
+{% assign visitors  = people | where_exp: "p", "p.roles contains 'vis'" %}
+{% assign alumni    = people | where_exp: "p", "p.roles contains 'alumnus'" %}
+
+{%- comment -%}
+HEAD & ADMINISTRATION
+{%- endcomment -%}
+
+{% if heads.size > 0 or admins.size > 0 %}
+<section class="team-section">
+  <h3 class="site-heading">Head &amp; Administration</h3>
+
+  <div class="team-grid">
+    {% for person in heads %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
     {% endif %}
-    {% if role.name == "admin" %} 
-<h3 class="site-heading accent-color-secondary">Administration</h3>
-    {% endif %}
-<div class="person-wrapper">
-  {% if person.img %}
-    <div class="person-image-container left">
-      <img
-        class="person-img"
-        src="{{ 'assets/images/people/' | append: person.img | relative_url }}"
-        alt="Photo of {{ person.name }}"
-      />
-    </div>
-  {% endif %}
-
-  <div class="person-image-container right">
-    <h3 class="person-name">
-      {{ person.title }} {{ person.name }}{% if role.name == "phd" or role.name == "extphd" %}, Ph.D. Candidate{% endif %}
-    </h3>
-
-    <p class="person-meta">
-      {% if person.position-special %}{{ person.position-special }}<br />{% endif %}
-      {% if person.mail %}
-        {% if person.mail.first %}
-          {% for m in person.mail %}
-            <a class="email" href="mailto:{{ m }}">{{ m }}</a>{% unless forloop.last %}, {% endunless %}
-          {% endfor %}
-          <br />
-        {% else %}
-          <a class="email" href="mailto:{{ person.mail }}">{{ person.mail }}</a><br />
+    <article class="team-card">
+      <header class="team-card__header">
+        {% if person.img %}
+        <div class="team-card__avatar">
+          <img
+            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+            alt="Photo of {{ full_name }}"
+            loading="lazy"
+          />
+        </div>
         {% endif %}
-      {% endif %}
-      {% if person.phone %}
-        Phone: {{ person.phone }}<br />
-      {% endif %}
-      {% if person.interests.size > 0 %}
-        Topics: {{ person.interests | array_to_sentence_string }}<br />
-      {% endif %}
-      {% if person.bib or person.homepage %}
-  <div class="person-links">
-    {% if person.bib %}
-      <a href="../../publications/index.html#{{ person.bib }}">Publications</a>
-    {% endif %}
-    {% if person.bib and person.homepage %}
-      <span class="person-link-separator">•</span>
-    {% endif %}
-    {% if person.homepage %}
-      <a href="{{ person.homepage }}">Homepage</a>
-    {% endif %}
-      </div>
-      {% endif %}
-      {% if person.current %}
-        Current Position: {{ person.current }}<br />
-      {% endif %}
-      {% if person.organisation %}
-        Organisation: {{ person.organisation }}<br />
-      {% endif %}
-    </p>
-  </div>
-</div>
+        <div class="team-card__title">
+          <h4 class="team-card__name">
+            {% if person.homepage %}
+            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
+            {% else %}
+            {{ full_name }}
+            {% endif %}
+          </h4>
+          {% if person.current or person.organisation %}
+          <p class="team-card__role">
+            {% if person.current %}{{ person.current }}{% endif %}
+            {% if person.current and person.organisation %}, {% endif %}
+            {% if person.organisation %}{{ person.organisation }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+      </header>
 
- {% endfor %}
-{% endfor %}
+      <div class="team-card__body">
+        {% if person.interests %}
+        <p class="team-card__interests">
+          <strong>Topics:</strong> {{ person.interests | join: ", " }}
+        </p>
+        {% endif %}
+
+        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
+        <p class="team-card__contact">
+          {% if person.mail %}
+          <i class="fas fa-envelope team-card__icon"></i>
+          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
+          {% endif %}
+
+          {% if person.github %}
+          <i class="fab fa-github team-card__icon"></i>
+          <a href="https://github.com/{{ person.github }}" target="_blank">
+            github.com/{{ person.github }}
+          </a><br>
+          {% endif %}
+
+          {% if person.orcid %}
+          <i class="fab fa-orcid team-card__icon"></i>
+          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
+            orcid.org/{{ person.orcid }}
+          </a><br>
+          {% endif %}
+
+          {% if person.bib %}
+          <i class="fas fa-book team-card__icon"></i>
+          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
+          {% endif %}
+
+          {% if person.phone %}
+          <i class="fas fa-phone-alt team-card__icon"></i>
+          <span>{{ person.phone }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+
+    {% for person in admins %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
+    {% endif %}
+    <article class="team-card">
+      <header class="team-card__header">
+        {% if person.img %}
+        <div class="team-card__avatar">
+          <img
+            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+            alt="Photo of {{ full_name }}"
+            loading="lazy"
+          />
+        </div>
+        {% endif %}
+        <div class="team-card__title">
+          <h4 class="team-card__name">
+            {% if person.homepage %}
+            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
+            {% else %}
+            {{ full_name }}
+            {% endif %}
+          </h4>
+          {% if person.current or person.organisation %}
+          <p class="team-card__role">
+            {% if person.current %}{{ person.current }}{% endif %}
+            {% if person.current and person.organisation %}, {% endif %}
+            {% if person.organisation %}{{ person.organisation }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="team-card__body">
+        {% if person.interests %}
+        <p class="team-card__interests">
+          <strong>Topics:</strong> {{ person.interests | join: ", " }}
+        </p>
+        {% endif %}
+
+        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
+        <p class="team-card__contact">
+          {% if person.mail %}
+          <i class="fas fa-envelope team-card__icon"></i>
+          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
+          {% endif %}
+
+          {% if person.github %}
+          <i class="fab fa-github team-card__icon"></i>
+          <a href="https://github.com/{{ person.github }}" target="_blank">
+            github.com/{{ person.github }}
+          </a><br>
+          {% endif %}
+
+          {% if person.orcid %}
+          <i class="fab fa-orcid team-card__icon"></i>
+          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
+            orcid.org/{{ person.orcid }}
+          </a><br>
+          {% endif %}
+
+          {% if person.bib %}
+          <i class="fas fa-book team-card__icon"></i>
+          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
+          {% endif %}
+
+          {% if person.phone %}
+          <i class="fas fa-phone-alt team-card__icon"></i>
+          <span>{{ person.phone }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{%- comment -%}
+RESEARCHERS (Postdocs + PhD)
+{%- endcomment -%}
+
+{% if researchers.size > 0 %}
+<section class="team-section">
+  <h3 class="site-heading">Researchers</h3>
+
+  <div class="team-grid">
+    {% for person in researchers %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
+    {% endif %}
+    <article class="team-card">
+      <header class="team-card__header">
+        {% if person.img %}
+        <div class="team-card__avatar">
+          <img
+            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+            alt="Photo of {{ full_name }}"
+            loading="lazy"
+          />
+        </div>
+        {% endif %}
+        <div class="team-card__title">
+          <h4 class="team-card__name">
+            {% if person.homepage %}
+            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
+            {% else %}
+            {{ full_name }}
+            {% endif %}
+          </h4>
+          {% if person.current or person.organisation %}
+          <p class="team-card__role">
+            {% if person.current %}{{ person.current }}{% endif %}
+            {% if person.current and person.organisation %}, {% endif %}
+            {% if person.organisation %}{{ person.organisation }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="team-card__body">
+        {% if person.interests %}
+        <p class="team-card__interests">
+          <strong>Topics:</strong> {{ person.interests | join: ", " }}
+        </p>
+        {% endif %}
+
+        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
+        <p class="team-card__contact">
+          {% if person.mail %}
+          <i class="fas fa-envelope team-card__icon"></i>
+          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
+          {% endif %}
+
+          {% if person.github %}
+          <i class="fab fa-github team-card__icon"></i>
+          <a href="https://github.com/{{ person.github }}" target="_blank">
+            github.com/{{ person.github }}
+          </a><br>
+          {% endif %}
+
+          {% if person.orcid %}
+          <i class="fab fa-orcid team-card__icon"></i>
+          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
+            orcid.org/{{ person.orcid }}
+          </a><br>
+          {% endif %}
+
+          {% if person.bib %}
+          <i class="fas fa-book team-card__icon"></i>
+          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
+          {% endif %}
+
+          {% if person.phone %}
+          <i class="fas fa-phone-alt team-card__icon"></i>
+          <span>{{ person.phone }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{%- comment -%}
+ASSOCIATED RESEARCHERS
+{%- endcomment -%}
+
+{% if extphd.size > 0 %}
+<section class="team-section">
+  <h3 class="site-heading">Associated Researchers</h3>
+
+  <div class="team-grid">
+    {% for person in extphd %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
+    {% endif %}
+    <article class="team-card">
+      <header class="team-card__header">
+        {% if person.img %}
+        <div class="team-card__avatar">
+          <img
+            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+            alt="Photo of {{ full_name }}"
+            loading="lazy"
+          />
+        </div>
+        {% endif %}
+        <div class="team-card__title">
+          <h4 class="team-card__name">
+            {% if person.homepage %}
+            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
+            {% else %}
+            {{ full_name }}
+            {% endif %}
+          </h4>
+          {% if person.current or person.organisation %}
+          <p class="team-card__role">
+            {% if person.current %}{{ person.current }}{% endif %}
+            {% if person.current and person.organisation %}, {% endif %}
+            {% if person.organisation %}{{ person.organisation }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="team-card__body">
+        {% if person.interests %}
+        <p class="team-card__interests">
+          <strong>Topics:</strong> {{ person.interests | join: ", " }}
+        </p>
+        {% endif %}
+
+        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
+        <p class="team-card__contact">
+          {% if person.mail %}
+          <i class="fas fa-envelope team-card__icon"></i>
+          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
+          {% endif %}
+
+          {% if person.github %}
+          <i class="fab fa-github team-card__icon"></i>
+          <a href="https://github.com/{{ person.github }}" target="_blank">
+            github.com/{{ person.github }}
+          </a><br>
+          {% endif %}
+
+          {% if person.orcid %}
+          <i class="fab fa-orcid team-card__icon"></i>
+          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
+            orcid.org/{{ person.orcid }}
+          </a><br>
+          {% endif %}
+
+          {% if person.bib %}
+          <i class="fas fa-book team-card__icon"></i>
+          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
+          {% endif %}
+
+          {% if person.phone %}
+          <i class="fas fa-phone-alt team-card__icon"></i>
+          <span>{{ person.phone }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{%- comment -%}
+STUDENT ASSISTANTS
+{%- endcomment -%}
+
+{% if students.size > 0 %}
+<section class="team-section">
+  <h3 class="site-heading">Student Assistants</h3>
+
+  <div class="team-grid team-grid--students">
+    {% for person in students %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
+    {% endif %}
+    <article class="team-card team-card--compact">
+      <header class="team-card__header">
+        {% if person.img %}
+        <div class="team-card__avatar">
+          <img
+            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+            alt="Photo of {{ full_name }}"
+            loading="lazy"
+          />
+        </div>
+        {% endif %}
+        <div class="team-card__title">
+          <h4 class="team-card__name">
+            {% if person.homepage %}
+            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
+            {% else %}
+            {{ full_name }}
+            {% endif %}
+          </h4>
+          {% if person.current or person.organisation %}
+          <p class="team-card__role">
+            {% if person.current %}{{ person.current }}{% endif %}
+            {% if person.current and person.organisation %}, {% endif %}
+            {% if person.organisation %}{{ person.organisation }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="team-card__body">
+        {% if person.interests %}
+        <p class="team-card__interests">
+          <strong>Topics:</strong> {{ person.interests | join: ", " }}
+        </p>
+        {% endif %}
+
+        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
+        <p class="team-card__contact">
+          {% if person.mail %}
+          <i class="fas fa-envelope team-card__icon"></i>
+          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
+          {% endif %}
+
+          {% if person.github %}
+          <i class="fab fa-github team-card__icon"></i>
+          <a href="https://github.com/{{ person.github }}" target="_blank">
+            github.com/{{ person.github }}
+          </a><br>
+          {% endif %}
+
+          {% if person.orcid %}
+          <i class="fab fa-orcid team-card__icon"></i>
+          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
+            orcid.org/{{ person.orcid }}
+          </a><br>
+          {% endif %}
+
+          {% if person.bib %}
+          <i class="fas fa-book team-card__icon"></i>
+          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
+          {% endif %}
+
+          {% if person.phone %}
+          <i class="fas fa-phone-alt team-card__icon"></i>
+          <span>{{ person.phone }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+
+{%- comment -%}
+VISITING RESEARCHERS
+{%- endcomment -%}
+
+{% if visitors.size > 0 %}
+<section class="team-section">
+  <h3 class="site-heading">Visiting Researchers</h3>
+
+  <div class="team-grid">
+    {% for person in visitors %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
+    {% endif %}
+    <article class="team-card">
+      <header class="team-card__header">
+        {% if person.img %}
+        <div class="team-card__avatar">
+          <img
+            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+            alt="Photo of {{ full_name }}"
+            loading="lazy"
+          />
+        </div>
+        {% endif %}
+        <div class="team-card__title">
+          <h4 class="team-card__name">
+            {% if person.homepage %}
+            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
+            {% else %}
+            {{ full_name }}
+            {% endif %}
+          </h4>
+          {% if person.current or person.organisation %}
+          <p class="team-card__role">
+            {% if person.current %}{{ person.current }}{% endif %}
+            {% if person.current and person.organisation %}, {% endif %}
+            {% if person.organisation %}{{ person.organisation }}{% endif %}
+          </p>
+          {% endif %}
+        </div>
+      </header>
+
+      <div class="team-card__body">
+        {% if person.interests %}
+        <p class="team-card__interests">
+          <strong>Topics:</strong> {{ person.interests | join: ", " }}
+        </p>
+        {% endif %}
+
+        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
+        <p class="team-card__contact">
+          {% if person.mail %}
+          <i class="fas fa-envelope team-card__icon"></i>
+          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
+          {% endif %}
+
+          {% if person.github %}
+          <i class="fab fa-github team-card__icon"></i>
+          <a href="https://github.com/{{ person.github }}" target="_blank">
+            github.com/{{ person.github }}
+          </a><br>
+          {% endif %}
+
+          {% if person.orcid %}
+          <i class="fab fa-orcid team-card__icon"></i>
+          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
+            orcid.org/{{ person.orcid }}
+          </a><br>
+          {% endif %}
+
+          {% if person.bib %}
+          <i class="fas fa-book team-card__icon"></i>
+          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
+          {% endif %}
+
+          {% if person.phone %}
+          <i class="fas fa-phone-alt team-card__icon"></i>
+          <span>{{ person.phone }}</span>
+          {% endif %}
+        </p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{%- comment -%}
+ALUMNI
+{%- endcomment -%}
+
+{% if alumni.size > 0 %}
+<details class="team-section team-section--alumni">
+  <summary class="team-section__header">
+    <h3 class="site-heading">Alumni</h3>
+    <span class="team-section__count">({{ alumni.size }})</span>
+  </summary>
+
+  <div class="team-grid--alumni">
+    {% for person in alumni %}
+    {% if person.title %}
+    {% assign full_name = person.title | append: " " | append: person.name %}
+    {% else %}
+    {% assign full_name = person.name %}
+    {% endif %}
+    <article class="team-card team-card--compact">
+      <header class="team-card__header">
+        <div class="team-card__title">
+          <h4 class="team-card__name">{{ full_name }}</h4>
+        </div>
+      </header>
+
+      {% if person.current %}
+      <p class="team-card__meta">
+        <strong>Current:</strong> {{ person.current }}
+      </p>
+      {% endif %}
+
+      {% if person.interests %}
+      <p class="team-card__meta team-card__meta--interests">
+        {{ person.interests | join: ", " }}
+      </p>
+      {% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</details>
+{% endif %}
