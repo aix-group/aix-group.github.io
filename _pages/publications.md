@@ -1,8 +1,8 @@
 ---
 permalink: /publications/
-permalink: /publications/
 classes: wide
 author_profile: true
+classes: wide
 ---
 
 <div class="bib-header">
