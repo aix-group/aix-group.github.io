@@ -121,7 +121,7 @@
   title: M.Sc.
   roles: ['extphd']
   mail: Marcel.Wentzien@eah-jena.de
-  Interests: ['Explainable AI', 'Computer Vision']
+  interests: ['Explainable AI', 'Computer Vision']
   img: Wentzien-Marcel.jpg
   bib: Wentzien
   orcid: 0009-0001-8420-0573
@@ -148,22 +148,25 @@
   roles: ['shk']
   interests: ['Machine Learning']
 
-- name: Dr. Meike Nauta (PhD)
+- name: Shreyasi Pathak (PhD)
+  title: Dr. 
+  roles: ['alumnus']
+  interests:  ['Explainable AI', 'Machine Learning for Medicine']
+  github: ShreyasiPathak
+  current: Post Doc at University of Twente
+
+- name: Meike Nauta (PhD)
+  title: Dr. 
   roles: ['alumnus']
   interests: ['Explainable AI', 'Computer Vision']
   img: Nauta-Meike.jpg
   current: AI Consultant at Datacation (NL)
 
-- name: Dr. Sultan Imangaliyev (PostDoc)
+- name: Sultan Imangaliyev (PostDoc)
+  title: Dr. 
   roles: ['alumnus']
   interests: ['Data Science', 'Bioinformatics']
   current: Data Scientist at Centraal Bureau voor de Statistiek (NL)
-
-- name: Shreyasi Pathak
-  roles: ['alumnus']
-  interests:  ['Explainable AI', 'Machine Learning for Medicine']
-  github: ShreyasiPathak
-  current: Post Doc at University of Twente
 
 
 - name: Lisa Anita De Santi (Visiting Researcher)
