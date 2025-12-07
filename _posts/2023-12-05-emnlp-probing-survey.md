@@ -1,5 +1,5 @@
 ---
-title: "Paper 'Give Me the Facts!' at EMNLP'23"
+title: "Fact Retrieval from LLMs (EMNLP'23)"
 last_modified_at: 2023-12-05
 classes: wide
 categories:

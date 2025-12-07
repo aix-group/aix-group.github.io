@@ -22,11 +22,7 @@ PIP-Net achieves global interpretability by showcasing the entire reasoning proc
 <li> {% reference Nauta2023_cvpr_pipnet %}</li>
 </ul>
 
-<iframe width="320" height="180"
-        src="https://www.youtube.com/embed/GfQQFQ62SLU"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen></iframe>
+{%- include video id="GfQQFQ62SLU" provider="youtube" -%}
 
 
 
