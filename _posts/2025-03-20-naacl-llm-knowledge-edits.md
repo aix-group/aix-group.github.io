@@ -2,15 +2,11 @@
 title: "Knowledge Editing in Large Language Models (NAACL'25)"
 last_modified_at: 2025-03-20T16:20:02-05:00
 categories:
-  - blog
-tags:
   - publication
+tags:
   - nlp
 ---
 
-The world changes, and so LLMs need to adapt.
-
-<!--more-->
 
 In our ever-changing world, knowledge of language models (LLMs) needs to be constantly updated. 
 Facts change and LLMs need to reflect this.

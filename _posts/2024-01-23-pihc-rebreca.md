@@ -2,16 +2,13 @@
 title: "Start of the Pioneers in Healthcare project ReBreCa"
 last_modified_at: 2024-01-23T21:44:02-05:00
 categories:
-  - blog
-tags:
   - project
+tags:
   - computer vision
   - explainable AI
 ---
 
 Pioneers in Healthcare is an innovation fund awarded by University of Twente, Saxion, MST, ZGT and Deventer Hospital. 
-
-<!--more-->
 
 It awards projects with impact on health care aiming to foster long-standing collaboration. 
 

@@ -2,17 +2,13 @@
 title: "Paper 'Give Me the Facts!' at EMNLP'23"
 last_modified_at: 2023-12-05
 categories:
-  - blog
-tags:
   - publication
+tags:
   - nlp
   - survey
 ---
 
 How do we know what Language Models know? 
-
-<!--more-->
-
 And what are obstacles in using them as knowledge bases? In our recent paper presented at EMNLP, we survey methods and datasets for probing PLMs along a categorization scheme. 
 
 ![image-center](/assets/images/posts/Youssef2023_emnlp_probing-taxonomy.png){: .align-center style="width: 50%"}
