@@ -1,6 +1,7 @@
 ---
 title: "LLMs for Counterfactuals (EMNLP'24)"
 last_modified_at: 2024-11-10T16:20:02-05:00
+classes: wide
 categories:
   - publication
 tags:

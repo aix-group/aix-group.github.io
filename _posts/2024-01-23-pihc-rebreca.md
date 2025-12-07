@@ -1,6 +1,7 @@
 ---
 title: "Start of the Pioneers in Healthcare project ReBreCa"
 last_modified_at: 2024-01-23T21:44:02-05:00
+classes: wide
 categories:
   - project
 tags:

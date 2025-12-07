@@ -1,6 +1,7 @@
 ---
 title: "PIP-Net - Interpretable Computer Vision (CVPR'23)"
 last_modified_at: 2023-06-19T16:20:02-05:00
+classes: wide
 categories:
   - publication
 tags:

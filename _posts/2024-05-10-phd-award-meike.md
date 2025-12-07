@@ -1,6 +1,7 @@
 ---
 title: "PhD Award Meike Nauta "
 last_modified_at: 2024-05-10T16:20:02-05:00
+classes: wide
 categories:
   - award
 tags:

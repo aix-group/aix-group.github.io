@@ -1,11 +1,13 @@
 ---
 title: "Bridging the Gap Between AI Research and Real-World Healthcare"
-last_modified_at: 2025-04-09T8:20:02-05:00
+last_modified_at: 2025-09-07T8:20:02-05:00
+classes: wide
 categories:
   - phd-thesis
 tags:
-  - representation learning
+  - XAI
   - computer vision
+  - medicine
 ---
 
 

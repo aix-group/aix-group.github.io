@@ -1,6 +1,7 @@
 ---
 title: "'The Queen of England is not England’s Queen.' (EACL'24)"
 last_modified_at: 2024-03-20T16:20:02-05:00
+classes: wide
 categories:
   - publication
 tags:

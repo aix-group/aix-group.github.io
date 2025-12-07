@@ -1,6 +1,7 @@
 ---
 title: "Unlearning spurious correlations (TMLR)"
 last_modified_at: 2025-04-09T8:20:02-05:00
+classes: wide
 categories:
   - publication
 tags:

@@ -1,6 +1,7 @@
 ---
 title: "Start of the Marflex Project Marcel, a Chatbot for Students"
 last_modified_at: 2024-04-1T21:44:02-05:00
+classes: wide
 categories:
   - project
 tags:

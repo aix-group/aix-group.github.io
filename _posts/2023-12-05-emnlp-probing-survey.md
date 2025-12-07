@@ -1,6 +1,7 @@
 ---
 title: "Paper 'Give Me the Facts!' at EMNLP'23"
 last_modified_at: 2023-12-05
+classes: wide
 categories:
   - publication
 tags:
