@@ -3,7 +3,7 @@ title: "Student Chatbot (EMNLP'25)"
 last_modified_at: 2025-12-04T8:20:02-05:00
 classes: wide
 categories:
-  - paper
+  - publication
 tags:
   - nlp
   - education
