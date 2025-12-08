@@ -1,5 +1,5 @@
 ---
-title: "Unlearning spurious correlations (TMLR)"
+title: "Unlearning Spurious Correlations (TMLR)"
 last_modified_at: 2025-04-09T8:20:02-05:00
 classes: wide
 categories:
@@ -23,8 +23,7 @@ The key insight behind PruSC is that training neural networks via Empirical Risk
 Empirical results show that PruSC outperforms existing annotation-free approaches and achieves worst-group accuracy on par with methods that rely on group annotations. These findings suggest that it is possible to extract a subnetwork from a dense model that depends solely on invariant features for classification—effectively eliminating the influence of spurious correlations.
 
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i> {% reference Le2025_tmlr_spurious-correlations-wo-group-annotations  %} [PDF](https://openreview.net/pdf?id=EEeVYfXor5) 
+### Reference
 
-<i class="fa-brands fa-github" style="font-size:12px;color: #7a46eb;"></i>  [Source Code](https://github.com/aix-group/prusc)
-
-
+<span class="cite-hidden">{% cite Le2025_tmlr_spurious-correlations-wo-group-annotations %}</span>
+{% bibliography --cited --group_by none --template bib %}

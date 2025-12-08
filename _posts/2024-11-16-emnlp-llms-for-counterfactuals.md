@@ -8,7 +8,7 @@ tags:
   - nlp
 ---
 
-_"What minimal changes to this text would cause the text classifier to change its prediction?"_
+> What minimal changes to this text would cause the text classifier to change its prediction?
 
 Counterfactual texts, i.e. minimal changes to inputs that alter a model's predictions, are an important technique in Explainable AI (XAI) for understanding model behaviour. 
 
@@ -27,11 +27,9 @@ Results in a nutshell:
 ![image-center](/assets/images/posts/Nguyen2024_emnlp_poster-in-action.jpg){: .align-center style="width: 50%"}
 
 <br/>
-**Links**
 
-<i class="fa fa-book-reader" style="font-size:12px;color: #7a46eb;"></i>  {% reference Nguyen2024_emnlp_llms-for-generating-counterfactuals  %}
-[PDF](https://aclanthology.org/2024.findings-emnlp.870.pdf) 
+### Reference
 
-<i class="fa-brands fa-github" style="font-size:12px;color: #7a46eb;"></i>  [Source Code](https://github.com/aix-group/llms-for-cfs/)
-
+<span class="cite-hidden">{% cite Nguyen2024_emnlp_llms-for-generating-counterfactuals %}</span>
+{% bibliography --cited --group_by none --template bib %}
 

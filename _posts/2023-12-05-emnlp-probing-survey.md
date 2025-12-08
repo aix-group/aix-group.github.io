@@ -20,7 +20,8 @@ We identify three main prevalent obstacles for using PLMs as knowledge bases:
 - Understanding where facts are stored and how they are retrieved is necessary for trustworthy applications.
 - Methods for reliably updating knowledge and/or enhancing facts with time-frames.
 
-**Paper**
-<ul class="key_pubs single_pub">
-<li> {% reference Youssef2023_emnlp_survey-probing %}</li>
-</ul>
+
+### Reference
+
+<span class="cite-hidden">{% cite Youssef2023_emnlp_survey-probing %}</span>
+{% bibliography --cited --group_by none --template bib %}

@@ -6,6 +6,7 @@ categories:
   - award
 tags:
   - AI
+  - education
 ---
 
 The **AI-Lab: AI & Society** project has been awarded the **Hessian University Teaching Prize**! This recognition reflects the passion, creativity, and hard work of everyone involved—especially the student leaders who turned an ambitious idea into a vibrant, interdisciplinary learning environment.

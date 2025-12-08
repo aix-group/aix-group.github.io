@@ -18,10 +18,8 @@ See the website, demo and paper for more details.
 
 ![image-center](/assets/images/posts/Trienes2024_acl_infolossqa.png){: .align-center style="width: 90%"}
 
-**Links**
+### Reference
 
-[Preprint on arxiv](https://arxiv.org/abs/2401.16475)  // 
-[Website with Demo](https://jantrienes.github.io/ts-info-loss/) //
-[Source Code](https://github.com/jantrienes/InfoLossQA/)
-
+<span class="cite-hidden">{% cite Trienes2024_acl_infolossqa %}</span>
+{% bibliography --cited --group_by none --template bib %}
 

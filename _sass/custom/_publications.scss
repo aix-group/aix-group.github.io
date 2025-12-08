@@ -2,14 +2,50 @@
    xAI Lab — Scientific bibliography styling
    ===================================================================== */
 
+/* Container used on the /publications page
+   (header + filter + year sections live inside this) */
 .bib {
-  font-size: $font-size-xs;        
+  font-size: $font-size-xs;
   line-height: 1.45;
   color: $color-text-main;
   max-width: 900px;                /* keeps text readable on wide screens */
 }
 
-/* Header: intro text + filter ------------------------------------------------ */
+/* cites remain hidden, bibliography --cited can then be used and only
+   shows the publication once */
+.cite-hidden {
+  display: none;
+}
+
+/* ---------------------------------------------------------------------
+   Shared bibliography list styling (page + posts)
+   --------------------------------------------------------------------- */
+
+/* jekyll-scholar always outputs <ol class="bibliography"> … </ol> */
+.bibliography {
+  list-style: none;                /* remove 1., 2., 3. */
+  margin: 0;
+  padding: 0;
+  font-size: $font-size-xs;
+  line-height: 1.45;
+  color: $color-text-main;
+}
+
+/* Spacing & base color for entries */
+.bibliography li {
+  margin-bottom: $space-sm;
+  color: $color-text-main;
+}
+
+/* Emphasise title/venue with italics but keep color consistent */
+.bibliography li i {
+  font-style: italic;
+  color: $color-text-main;
+}
+
+/* ---------------------------------------------------------------------
+   Header: intro text + filter (only on /publications page)
+   --------------------------------------------------------------------- */
 
 .bib-header {
   /* keep header in the same column as the bibliography */
@@ -47,7 +83,6 @@
   }
 }
 
-
 /* small screens: stack text + filter, filter full width */
 @media (max-width: $bp-small) {
   .bib-header {
@@ -60,7 +95,9 @@
   }
 }
 
-/* Year headings -------------------------------------------------------------- */
+/* ---------------------------------------------------------------------
+   Year headings (only on /publications page)
+   --------------------------------------------------------------------- */
 
 .bib h2 {
   margin-top: $space-xxl;          /* stronger separation between years */
@@ -77,50 +114,13 @@
   scroll-margin-top: $space-xl;
 }
 
-/* Remove numbering */
-
-.bib .bibliography {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Spacing & base color for entries */
-
-.bib .bibliography li {
-  margin-bottom: $space-sm;
-  color: $color-text-main;
-}
-
-/* Emphasise title/venue with italics but keep color consistent */
-
-.bib .bibliography li i {
-  font-style: italic;
-  color: $color-text-main;
-}
-
-/* ---------------------------------------------------------------------
-   Publication cards
-   --------------------------------------------------------------------- */
-
-.pub-item {
-  margin: $space-lg 0;
-  padding: $space-md $space-lg;
-  background: $color-surface-alt;  /* light panel/background color */
-  box-shadow: $shadow-card;        /* subtle elevation */
-}
-
-.pub-item__meta {
-  margin-top: $space-xs;
-  font-size: $font-size-xs;
-  color: $color-text-muted;
-}
-
 /* ---------------------------------------------------------------------
    Links / badges (PDF, code, DOI, etc.)
    --------------------------------------------------------------------- */
 
-.bib .pub-links {
+/* Make pub-links work both on /publications and in post references.
+   We no longer require a .bib wrapper. */
+.pub-links {
   display: inline-flex;
   flex-wrap: nowrap;
   gap: $space-xxs;
@@ -129,7 +129,7 @@
   vertical-align: baseline;
 }
 
-.bib .pub-links a {
+.pub-links a {
   display: inline-flex;
   align-items: center;
   padding: $space-xxs $space-xxs;
@@ -142,13 +142,13 @@
   text-decoration: none;
 }
 
-.bib .pub-links a:hover {
+.pub-links a:hover {
   border-color: $color-brand-primary;
   color: $color-brand-primary;
   opacity: 1;
 }
 
-.bib .pub-links i {
+.pub-links i {
   font-size: 0.8em;
   margin-right: $space-xxs;
 }

@@ -17,12 +17,13 @@ PIP-Net learns prototypical parts in a self-supervised manner that better correl
 
 PIP-Net achieves global interpretability by showcasing the entire reasoning process through learned prototypes. Local explanations identify relevant prototypes in an image. Our prototypes correlate with ground-truth object parts. With these interpretable prototypes, PIP-Net enables users to intuitively and meaningfully understand decisions.
 
-**Paper**
-<ul class="key_pubs single_pub">
-<li> {% reference Nauta2023_cvpr_pipnet %}</li>
-</ul>
-
 {%- include video id="GfQQFQ62SLU" provider="youtube" -%}
+
+
+### Reference
+
+<span class="cite-hidden">{% cite Nauta2023_cvpr_pipnet %}</span>
+{% bibliography --cited --group_by none --template bib %}
 
 
 

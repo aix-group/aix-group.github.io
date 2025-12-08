@@ -92,7 +92,7 @@ tag_archive:
 plugins: ['jekyll/scholar']
 scholar:
   source: /_bibliography
-  style: ieee
+  style: apa
   group_by: year
   group_order: descending
   sort_by: year,month
