@@ -8,6 +8,11 @@ Keeps a classic scientific look, but adds icon links, a collapsible
 BibTeX block, and a hidden text blob for the JS filter.
 {%- endcomment -%}
 
+{%- comment -%}
+Anchor so citation links (`href="#<key>"`) have a target.
+{%- endcomment -%}
+<a id="{{ entry.key }}"></a>
+
 {%- comment -%} Build author list (First Last, First Last, ...) {%- endcomment -%}
 {% if entry.author %}
   {% assign author_list = entry.author | split: " and " %}
