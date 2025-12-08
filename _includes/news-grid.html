@@ -1,7 +1,7 @@
 <div class="news">
 
   <!-- Filter bar -->
-<!--   <section class="news-filters" aria-label="Filter news">
+ <section class="news-filters" aria-label="Filter news">
     <div class="news-filters__group">
       <label for="news-search">Search</label>
       <input
@@ -33,7 +33,7 @@
         {% endfor %}
       </select>
     </div>
-  </section> -->
+  </section>
 
   <!-- News cards -->
   <section class="news-grid">
@@ -52,7 +52,7 @@
       {% elsif post.tags contains "project" or post.categories contains "project" %}
         {% assign post_type_icon = "fas fa-flask" %}
         {% assign post_type_label = "Project" %}
-      {% elsif post.tags contains "phd-thesis" or post.categories contains "thesis" %}
+      {% elsif post.tags contains "phd-thesis" or post.categories contains "phd-thesis" %}
         {% assign post_type_icon = "fas fa-graduation-cap" %}
         {% assign post_type_label = "PhD thesis" %}
       {% endif %}

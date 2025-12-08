@@ -1,0 +1,19 @@
+{% assign features = include.features %}
+<div class="feature__wrapper">
+  {% for feature in features %}
+    <div class="feature__item">
+      <div class="archive__item">
+        <h2 class="archive__item-title">
+          {% if feature.icon %}
+            <i class="{{ feature.icon }} fa-sm" aria-hidden="true"></i>
+          {% endif %}
+          {{ feature.title }}
+        </h2>
+        <p class="archive__item-excerpt">{{ feature.excerpt }}</p>
+        <div class="archive__item-body">
+          <p><a href="{{ feature.url }}">Learn more</a></p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>

@@ -1,51 +1,104 @@
-/* ==========================================================================
-   RESEARCH PAGE
-   ========================================================================== */
+/* Grid container */
+.feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: $space-md;
+  margin-bottom: $space-lg;
+}
 
-/* research feature tiles */
+/* Each feature card */
 .feature__item {
-  text-align: center;
+  display: flex; // so the child can stretch
+  height: 100%;
 }
 
-.feature__item img {
-  max-height: 140px;
-  margin: 0 auto $space-sm;
-  display: block;
-  object-fit: contain;
-}
-
-/* TOC styling (right sidebar) */
-
-
-/* Override MM red TOC title bar */
-.toc .nav__title {
-  background-color: $color-brand-primary !important;
-  color: #ffffff !important;
-  padding: $space-sm $space-md !important;
-  margin: 0 !important;
-  border-radius: $radius-md $radius-md 0 0;
+/* Card content container */
+.feature__item .archive__item {
   display: flex;
-  align-items: center;
-  gap: $space-xs;
-}
-
-.toc {
+  flex-direction: column;
+  padding: $space-sm;
+  background-color: $color-surface;
   border: 1px solid $color-border-soft;
-  background-color: $color-surface-soft;
-  border-radius: $radius-md;
-  padding: 0;
-  overflow: hidden;
+  box-shadow: $shadow-subtle;
+  border-radius: 0;
+  transition: 0.12s ease;
+  text-align: left;
+  height: 100%;
+  min-height: $space-3xl * 3; // ≈ previous 220px
 }
 
-.toc__menu {
-  font-size: $font-size-sm;
-  padding: $space-md $space-xl;
+/* Feature title: icon aligned to first line + nicer spacing */
+.feature__item .archive__item-title {
+  display: flex;
+  align-items: baseline;
+  gap: $space-xs;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  line-height: 1.25;
+  margin: 0 0 $space-xs;
+  color: $color-text-strong;
 }
 
-.toc__menu a {
-  color: $color-text-main;
+/* Icon inside the title */
+.feature__item .archive__item-title .icon,
+.feature__item .archive__item-title i,
+.feature__item .archive__item-title svg {
+  margin-top: 0;
+  flex-shrink: 0;
+  line-height: 1;
 }
 
-.toc__menu a:hover {
-  color: $color-brand-primary;
+/* Excerpt text should take remaining vertical space */
+.feature__item .archive__item-excerpt {
+  font-size: $font-size-xs;
+  line-height: 1.4;
+  margin: 0 0 $space-sm;
+  color: $color-text-muted;
+  flex-grow: 1; // lets excerpt expand but keeps bottom aligned
+}
+
+/* "Learn more" container + link */
+.feature__item .archive__item-body {
+  margin-top: auto;
+  padding-bottom: $space-xs;
+}
+
+.feature__item .archive__item-body > p {
+  margin: 0;
+  text-align: right;
+  padding-bottom: $space-xxs;
+  font-size: $font-size-xxs;
+}
+
+.feature__item .archive__item-body a {
+  font-size: $font-size-xxs;
+  color: $color-text-muted;
+  text-decoration: none;
+}
+
+/* Hover state */
+.feature__item .archive__item:hover {
+  transform: translateY(-1px);
+  box-shadow: $shadow-card;
+  border-color: $color-border-soft;
+}
+
+/* Single column on small screens */
+@media (max-width: $bp-small) {
+  .feature__wrapper {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Research page only: remove Minimal Mistakes border under feature row */
+body.page--research .feature__wrapper {
+  border-bottom: none;
+  margin-bottom: $space-lg;
+}
+
+/* Headings after the feature row on research page */
+body.page--research .page__content > .feature__wrapper + h2 {
+  margin-top: $space-md;
+  padding-top: 0;
+  border-top: none;
 }
