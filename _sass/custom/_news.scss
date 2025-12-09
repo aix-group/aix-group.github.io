@@ -2,8 +2,6 @@
    News / Posts page
    ========================================================================== */
 
-/* Two-column layout: author profile left, news content right */
-
 .news-layout {
   display: grid;
   grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
