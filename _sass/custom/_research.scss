@@ -4,11 +4,13 @@
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: $space-md;
   margin-bottom: $space-lg;
+  align-items: stretch; // make grid items same height
 }
 
 /* Each feature card */
 .feature__item {
   display: flex; // so the child can stretch
+  float:none;
   height: 100%;
 }
 
@@ -90,10 +92,23 @@
   }
 }
 
-/* Research page only: remove Minimal Mistakes border under feature row */
+/* Research page only: make feature row a proper grid */
 body.page--research .feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: $space-md;
   border-bottom: none;
   margin-bottom: $space-lg;
+  align-items: stretch; // make grid items same height
+}
+
+/* Each feature card – override the theme's float + width */
+body.page--research .feature__item {
+  display: flex;   // so the child can stretch
+  float: none;     // cancel Minimal Mistakes float
+  width: 100%;     // fill the grid column
+  margin: 0;       // optional: remove leftover margins
+  height: 100%;
 }
 
 /* Headings after the feature row on research page */
