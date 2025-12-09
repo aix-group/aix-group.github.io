@@ -69,9 +69,8 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
-      share: true
       related: true
+      related_posts_limit: 3
   # _pages
   - scope:
       path: "_pages"
