@@ -1,5 +1,5 @@
 /* ==========================================================================
-   News / Posts page
+   News / Posts page / and related posts
    ========================================================================== */
 
 .news-layout {
@@ -270,4 +270,134 @@ article.news-card h2.news-card__title {
 
 .news-card p.news-card__excerpt {
   font-size: $font-size-xs !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   Post meta (tags / categories / updated) in one line
+   -------------------------------------------------------------------------- */
+
+footer.page__meta {
+  display: flex;
+  flex-wrap: wrap;          // allows wrapping on very small screens
+  align-items: baseline;
+  gap: $space-lg;           // space between "Tags", "Categories", "Updated"
+  margin-top: $space-lg;    // keep existing spacing above
+}
+
+/* Remove vertical margins so they sit nicely in the row */
+footer.page__meta > p {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* --------------------------------------------------------------------------
+   Post footer tags/categories styled like news-card tags
+   -------------------------------------------------------------------------- */
+
+/* Make each taxonomy block (Tags / Categories) a row with chips */
+footer.page__meta .page__taxonomy {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.25rem;          // space between label and chips
+}
+
+/* Little space between icon/label and chips */
+footer.page__meta .page__taxonomy > strong {
+  margin-right: $space-xs;
+}
+
+/* Hide the default comma separators between tags */
+footer.page__meta .page__taxonomy .sep {
+  display: none;
+}
+
+/* Chip style: match .news-tag */
+footer.page__meta .page__taxonomy-item {
+  padding: 2px 6px;
+  background-color: $color-surface-soft;
+  border: 1px solid rgba(18, 8, 43, 0.06);
+  font-size: $font-size-xxs;
+  line-height: 1.1;
+  color: $color-text-main;
+  display: inline-block;
+  white-space: nowrap;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* Hover similar to news tags (subtle only) */
+footer.page__meta .page__taxonomy-item:hover {
+  text-decoration: none;
+  color: $color-text-main;
+}
+
+/* --------------------------------------------------------------------------
+    Post Pagination (Previous / Next)
+   -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------
+   Polished Post Pagination (Previous / Next)
+   -------------------------------------------------------------------------- */
+
+/* Kill MM's big gap + border above pagination, but keep a *tiny* top gap */
+.page__content + nav.pagination,
+.page__meta + nav.pagination,
+.page__share + nav.pagination,
+.page__comments + nav.pagination {
+  margin-top: $space-xs !important;   // small top space
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* Pagination container: a bit more top than bottom space */
+nav.pagination {
+  display: flex;
+  justify-content: space-between;
+  gap: $space-xs;
+
+  margin-top: $space-sm !important;   // more top space
+  margin-bottom: $space-xxs !important; // less bottom space
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* Buttons: smaller font + height */
+nav.pagination .pagination--pager {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: $space-xxs $space-sm;      // smaller height
+  font-size: $font-size-xs;           // smaller font
+  font-weight: $font-weight-semibold;
+
+  color: $color-brand-primary;
+  background-color: $color-surface;
+  border: 1px solid $color-border-soft;
+  box-shadow: $shadow-subtle;
+  border-radius: 0;
+
+  text-decoration: none;
+  transition: 0.12s ease;
+}
+
+nav.pagination .pagination--pager:hover {
+  transform: translateY(-1px);
+  box-shadow: $shadow-card;
+  border-color: $color-border-soft;
+}
+
+/* Disabled (first or last page) */
+nav.pagination .pagination--pager.disabled {
+  color: $color-text-muted;
+  background-color: $color-surface-soft;
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+  transform: none;
 }
