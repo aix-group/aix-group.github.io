@@ -1,6 +1,7 @@
 ---
 permalink: /cseifert/
 title: Prof. Dr. Christin Seifert
+classes: wide
 ---
 ## About 
 I am a Full Professor at the Department of Computer Science and Mathematics at the Philipps-University Marburg, Germany and the Hessian Center for Artificial Intelligence.
