@@ -36,9 +36,9 @@ We focus on real-world settings where AI decisions have meaningful impact — fr
 > “Why was my credit application rejected, and what can I do about it?”
 
 
-Machine learning systems are deployed in settings where people must understand, trust, and sometimes contest automated decisions. In our Explainable AI (XAI) work, we design methods that make model reasoning transparent and evaluate how explanations affect real users.
+Machine learning systems are used in situations where people must understand and trust automated decisions, and occasionally challenge them. In our Explainable AI (XAI) research, we design methods that make model reasoning transparent. We also analyze and improve the impact of explanations on real users.
 
-Our Explainable AI research develops **interpretable models**, {% cite Nauta2021_cvpr_prototree %}; {%cite Nauta2023_cvpr_pipnet %},
+In this area, we develop **interpretable models**, {% cite Nauta2021_cvpr_prototree %}; {%cite Nauta2023_cvpr_pipnet %},
 creates **conversational agents for explanations**, {% cite Nguyen2023_wcxai_xagent %},
 examines **evaluation of explanation quality**, {% cite Nauta2023_csur_evaluating-xai-survey %}; {% cite Le2023_ijcai_benchmarking-xai %},
 and studies **how people perceive errors and uncertainty**, {% cite Papenmeier2022a_chi_perceived-accuracy%}; {%cite Papenmeier2022_tochi_trust-accuracy-explanations %}.
