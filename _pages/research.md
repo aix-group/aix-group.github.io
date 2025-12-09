@@ -57,7 +57,7 @@ and builds **domain-specific NLP tools for healthcare**,
 {% cite Trienes2022_tsar_patient-friendly-clinical-notes %}, {% cite Pathak2019_tcbb_post-structuring-radiology-reports %}, {% cite Libbi2021_futint_synthetic-data-deidentification %}.
 
 If you want to know what mammoths have to do with natural language generation, check out this  
-[ICLR Blog post on Plug-and-Play Language Models](https://iclr-blog-track.github.io/2022/03/25/PPLM/).
+[ICLR Blog post](https://iclr-blog-track.github.io/2022/03/25/PPLM/) on Plug-and-Play Language Models.
 
 
 
