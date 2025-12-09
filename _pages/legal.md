@@ -15,6 +15,5 @@ University of Marburg<br>
 Hans-Meerwein-Str. 6<br>
 D-35032 Marburg, Germany<br>
 
-*Phone:* +49 6421 2821579 2825460<br>
+*Phone:* +49 6421 2825460<br>
 *Email:* christin.seifert AT uni-marburg.de<br>
-*Twitter:* @SeifertChristin
