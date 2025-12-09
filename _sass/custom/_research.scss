@@ -85,11 +85,6 @@
   display: inline-block;
 }
 
-/* Hover state */
-.feature__item .archive__item:hover {
-  color: $color-brand-primary;
-  text-decoration: underline;
-}
 
 /* Single column on small screens */
 @media (max-width: $bp-small) {
