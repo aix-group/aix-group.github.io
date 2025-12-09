@@ -26,7 +26,6 @@ Results in a nutshell:
 
 ![image-center](/assets/images/posts/Nguyen2024_emnlp_poster-in-action.jpg){: .align-center style="width: 50%"}
 
-<br/>
 
 ### Reference
 

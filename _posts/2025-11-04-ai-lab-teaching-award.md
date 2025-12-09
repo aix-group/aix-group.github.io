@@ -15,4 +15,8 @@ The AI-Lab began as a lunch conversation between **Ali Kholmovai** and **Tim Ush
 
 This term marks the third iteration of the AI-Lab. I’m excited to see how the project continues to evolve. The lab is open to all students interested in exploring both the opportunities and the ethical challenges of AI. Whether you are a programmer, a philosopher, or simply curious, your perspective is welcome.
 
+
+![image-center](/assets/images/posts/2025_ailab-award-celebration.jpeg){: .align-center style="width: 50%"}
+
+
 [Official Award Website](https://wissenschaft.hessen.de/presse/exzellente-lehre-aus-giessen-frankfurt-und-marburg-mit-hessischem-hochschullehrpreis-ausgezeichnet)
