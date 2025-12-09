@@ -54,7 +54,7 @@
 .feature__item .archive__item-excerpt {
   font-size: $font-size-xs;
   line-height: 1.4;
-  margin: 0 0 $space-sm;
+  margin: 0 0 0 0;
   color: $color-text-muted;
   flex-grow: 1; // lets excerpt expand but keeps bottom aligned
 }
@@ -62,27 +62,33 @@
 /* "Learn more" container + link */
 .feature__item .archive__item-body {
   margin-top: auto;
-  padding-bottom: $space-xs;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .feature__item .archive__item-body > p {
   margin: 0;
-  text-align: right;
-  padding-bottom: $space-xxs;
-  font-size: $font-size-xxs;
+  line-height: 1;
 }
 
 .feature__item .archive__item-body a {
   font-size: $font-size-xxs;
-  color: $color-text-muted;
+  text-transform: none;
+  letter-spacing: 0;
   text-decoration: none;
+  color: $color-brand-primary;
+  padding: 0;
+  background: none;
+  border: none;
+  box-shadow: none;
+  display: inline-block;
 }
 
 /* Hover state */
 .feature__item .archive__item:hover {
-  transform: translateY(-1px);
-  box-shadow: $shadow-card;
-  border-color: $color-border-soft;
+  color: $color-brand-primary;
+  text-decoration: underline;
 }
 
 /* Single column on small screens */

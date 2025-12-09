@@ -9,17 +9,17 @@ classes:
 feature_row_custom:
   - icon: "fas fa-brain"
     title: "Explainable AI"
-    excerpt: "Interpretable models, explanation methods, and their evaluation."
+    excerpt: "Intrinsically interpretable models, explanation evaluation, user centric-aspects."
     url: "#explainable-ai"
 
   - icon: "fas fa-comments"
     title: "Language & LLMs"
-    excerpt: "Capabilities, limitations, and behavior of LLMs."
+    excerpt: "Capabilities, limitations, and behavior of Large Language Models."
     url: "#language-and-llms"
 
   - icon: "fas fa-cogs"
-    title: "Applied Machine Learning"
-    excerpt: "ML in sensitive, safety-critical, and real-world domains."
+    title: "Applied ML"
+    excerpt: "Machine learning in sensitive, safety-critical, and real-world domains."
     url: "#applied-machine-learning"
 ---
 
