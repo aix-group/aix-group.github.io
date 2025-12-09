@@ -50,72 +50,55 @@ home_feature_row:
 
 {% include feature_row_custom.html features=page.home_feature_row %}
 
-
 <h2 class="home-section-heading site-heading accent-color-secondary">Recent news</h2>
 
-<div class="archive">
-  {% assign recent_posts = site.posts
-        | where_exp: "post", "post.draft != true"
-        | sort: "date"
-        | reverse %}
-  {% for post in recent_posts limit:3 %}
-    <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
-      <h3 class="archive__item-title" itemprop="headline">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h3>
+<div class="home-news">
+  <div class="home-news-list">
+    {% assign recent_posts = site.posts
+          | where_exp: "post", "post.draft != true"
+          | sort: "date"
+          | reverse %}
+    {% for post in recent_posts limit:3 %}
+      <article class="home-news-item" itemscope itemtype="http://schema.org/CreativeWork">
+        <h3 class="home-news-title" itemprop="headline">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
 
-      {% if post.date %}
-        <p class="page__meta">
-          <time datetime="{{ post.date | date_to_xmlschema }}">
-            {{ post.date | date: "%B %-d, %Y" }}
-          </time>
-        </p>
-      {% endif %}
+        {% if post.date %}
+          <p class="home-news-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">
+              {{ post.date | date: "%B %-d, %Y" }}
+            </time>
+          </p>
+        {% endif %}
 
-      {% if post.excerpt %}
-        <p class="archive__item-excerpt" itemprop="description">
-          {{ post.excerpt | strip_html | truncate: 180 }}
-        </p>
-      {% endif %}
-    </article>
-  {% endfor %}
+        {% if post.excerpt %}
+          <p class="home-news-excerpt" itemprop="description">
+            {{ post.excerpt | strip_html | truncate: 220 }}
+          </p>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+
+  <p class="home-news-more">
+    <a href="/posts/">More news →</a>
+  </p>
 </div>
 
-<p class="home-more-link">
-  <a href="/posts/">More news →</a>
-</p>
+
+
 
 <h2 class="home-section-heading site-heading accent-color-tertiary">Selected publications</h2>
 
-<div class="archive">
-  {% assign recent_pubs = site.posts
-        | where_exp: "post", "post.categories contains 'publication'"
-        | sort: "date"
-        | reverse %}
-  {% for pub in recent_pubs limit:3 %}
-    <article class="archive__item">
-      <h3 class="archive__item-title">
-        <a href="{{ pub.url | relative_url }}">{{ pub.title }}</a>
-      </h3>
+<span class="cite-hidden">{% cite Le2025_tmlr_spurious-correlations-wo-group-annotations Youssef2025_naacl_detecting-knowledge-edits Trienes2025_acl_information-salience Nauta2023_cvpr_pipnet  Papenmeier2022a_chi_perceived-accuracy%}</span>
+{% bibliography --cited --group_by none --template bib %}
 
-      {% if pub.date %}
-        <p class="page__meta">
-          <time datetime="{{ pub.date | date_to_xmlschema }}">
-            {{ pub.date | date: "%B %-d, %Y" }}
-          </time>
-        </p>
-      {% endif %}
+  <p class="home-news-more">
+    <a href="/posts/">All publications →</a>
+  </p>
 
-      {% if pub.excerpt %}
-        <p class="archive__item-excerpt">
-          {{ pub.excerpt | strip_html | truncate: 180 }}
-        </p>
-      {% endif %}
-    </article>
-  {% endfor %}
-</div>
-
-<h2 class="home-section-heading site-heading accent-color-quartiary">People & projects</h2>
+<!-- <h2 class="home-section-heading site-heading accent-color-quartiary">People & projects</h2>
 
 <p>
   Our work is highly collaborative and interdisciplinary, spanning computer science, medicine,
@@ -125,4 +108,4 @@ home_feature_row:
 <p>
   <a class="btn" href="/team/">Meet the team →</a>
   <a class="btn btn--inverse" href="/research/">Explore our projects →</a>
-</p>
+</p> -->

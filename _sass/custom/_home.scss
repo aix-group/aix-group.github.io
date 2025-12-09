@@ -2,16 +2,116 @@
    HOME PAGE
    ========================================================================== */
 
-body.page-home .feature__item {
-  transition: transform 0.2s ease;
-}
-
-body.page-home .feature__item:hover {
-  transform: translateY(-4px);
-}
-
 /* Constrain the width of the splash content to match normal pages */
 body.layout--splash .page__content {
   max-width: 60rem;
   margin-inline: auto;
+}
+
+/* All home-page tweaks are scoped under body.page-home */
+body.page-home {
+
+  /* Research cards hover */
+  .feature__item {
+    transition: transform 0.2s ease;
+  }
+
+  .feature__item:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Section headings: "Our research areas", "Recent news", ... */
+  .home-section-heading {
+    margin-top: $space-3xl;
+    margin-bottom: $space-xl;
+    font-size: $font-size-xl;
+    clear: both; // always start below any floats
+  }
+
+  /* Extra top margin only for the first home heading */
+  .page__content > .home-section-heading:first-of-type {
+    margin-top: $space-xxl;
+  }
+}
+
+  /* ============================================
+   HOME NEWS — extra dense layout
+   ============================================ */
+
+body.page-home {
+
+  /* Tighter spacing above & below section headings */
+  .home-section-heading {
+    margin-top: $space-xxl;       // was larger
+    margin-bottom: $space-md;     // tighten vertical rhythm
+  }
+
+  /* First section heading after the hero gets slightly more air */
+  .page__content > .home-section-heading:first-of-type {
+    margin-top: $space-xxl;
+  }
+
+  /* News container spacing */
+  .home-news {
+    margin-bottom: $space-xl;     // tighter space before "Selected publications"
+  }
+
+  /* Individual news items */
+  .home-news-item {
+    padding: $space-xs 0;         // smaller vertical padding
+    border-bottom: 1px solid $color-border-soft;
+  }
+
+  .home-news-item:last-child {
+    border-bottom: none;          // avoid double border near "More news"
+  }
+
+  /* News title (h3) */
+  .home-news-title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    line-height: 1.25;
+    margin-bottom: $space-xxs;
+  }
+  
+
+  /* Date line */
+  .home-news-meta {
+    font-size: $font-size-xs;
+    color: $color-text-muted;
+    margin-bottom: $space-xxs;
+  }
+
+  /* Excerpt */
+  .home-news-excerpt {
+    font-size: $font-size-sm;
+    line-height: 1.35;
+    color: $color-text-muted;
+    margin-bottom: $space-xs;
+  }
+
+  /* "More news →" alignment */
+  .home-news-more {
+    text-align: right;
+    margin-top: $space-xs;
+  }
+}
+
+body.page-home .home-news-title {
+  margin-top: 0 !important;
+}
+
+body.page-home .home-news-title {
+  margin-top: 0 !important;
+  margin-bottom: $space-xxs !important;   // cleaner, denser layout
+}
+
+/* Ensure news titles use card-style link color */
+body.page-home .home-news-title a {
+  color: $color-text-strong !important;   // same as research card titles
+  text-decoration: none !important;
+}
+
+body.page-home .home-news-title a:hover {
+  color: $color-brand-primary !important; // same hover color as cards
 }

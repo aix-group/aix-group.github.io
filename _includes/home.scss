@@ -1,0 +1,182 @@
+/* ==========================================================================
+   HOME PAGE
+   ========================================================================== */
+
+/* Constrain the width of the splash content to match normal pages */
+body.layout--splash .page__content {
+  max-width: 60rem;          // adjust width if desired
+  margin-inline: auto;       // center content
+}
+
+/* Home page: exactly three research cards per row */
+body.layout--splash.page-home .feature__wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr)); // 3 equal columns
+  gap: $space-md;
+  align-items: stretch;
+}
+/* Force exactly 3 columns on home page */
+body.layout--splash.page-home.page--research section.page__content .feature__wrapper {
+  grid-template-columns: repeat(3, 1fr) !important;
+}
+
+
+/* Make cards fill their full grid cell */
+body.layout--splash.page-home .feature__item,
+body.layout--splash.page-home .feature__item .archive__item {
+  display: flex;
+  float: none;               // remove theme floats
+  width: 100%;               // stretch card across full grid column
+  max-width: none;           // remove theme max-width
+  margin: 0;                 // remove side spacing
+  height: 100%;
+}
+
+
+/* ==========================================================================
+   HOME PAGE
+   ========================================================================== */
+
+/* Hero research cards hover */
+.page-home .feature__item {
+  transition: transform 0.2s ease;
+}
+
+.page-home .feature__item:hover {
+  transform: translateY(-4px);
+}
+
+/* Headings like "Our research areas", "Recent news", etc. */
+.home-section-heading {
+  margin-top: $space-3xl;
+  margin-bottom: $space-xl;
+  font-size: $font-size-xl;
+}
+
+/* Subtle divider before the first main home section */
+.page__content > .home-section-heading:first-of-type {
+  margin-top: $space-xxl;
+}
+
+/* Constrain splash content width to feel like normal pages */
+body.layout--splash .page__content {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+/* ====================== */
+/* HOME NEWS SECTION      */
+/* ====================== */
+
+/* ==========================================================================
+   HOME PAGE
+   ========================================================================== */
+
+.page-home .feature__item {
+  transition: transform 0.2s ease;
+}
+
+.page-home .feature__item:hover {
+  transform: translateY(-4px);
+}
+
+.home-section-heading {
+  margin-top: $space-3xl;
+  margin-bottom: $space-xl;
+  font-size: $font-size-xl;
+}
+
+/* subtle divider before first main home section */
+.page__content > .home-section-heading:first-of-type {
+  margin-top: $space-xxl;
+}
+
+/* Constrain splash content width */
+body.layout--splash .page__content {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+/* HOME NEWS SECTION ---------------------------------------- */
+/* ==========================================================================
+   HOME PAGE
+   ========================================================================== */
+
+/* Research cards hover */
+.page-home .feature__item {
+  transition: transform 0.2s ease;
+}
+
+.page-home .feature__item:hover {
+  transform: translateY(-4px);
+}
+
+/* Section headings: "Our research areas", "Recent news", ... */
+.home-section-heading {
+  margin-top: $space-3xl;
+  margin-bottom: $space-xl;
+  font-size: $font-size-xl;
+  clear: both; // always start below any floats
+}
+
+/* Subtle divider before the first main section */
+.page__content > .home-section-heading:first-of-type {
+  margin-top: $space-xxl;
+}
+
+/* Constrain splash content width to feel like normal pages */
+body.layout--splash .page__content {
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+/* ======================
+   HOME NEWS SECTION
+   ====================== */
+
+.home-news {
+  margin-bottom: $space-3xl;   // space before "Selected publications"
+}
+
+/* Override Minimal Mistakes archive float/layout inside home news */
+.home-news .archive {
+  float: none;                 // cancel theme float
+  width: 100%;
+  max-width: none;
+  padding-inline-end: 0;
+  margin: 0;
+}
+
+/* Card styling ONLY for home news */
+.home-news .archive__item {
+  display: block;
+  float: none;
+  clear: both;
+  width: 100%;
+  padding: $space-md $space-xl;
+  margin-bottom: $space-md;
+  border-radius: $radius-md;
+  border: 1px solid $color-border-soft;
+  background-color: $color-surface;
+  box-shadow: $shadow-card;
+}
+
+.home-news .archive__item-title {
+  font-size: $font-size-sm + 0.15;
+  margin-bottom: $space-xxs;
+}
+
+.home-news .archive__item-excerpt {
+  margin-top: $space-xxs;
+  font-size: $font-size-md;
+  color: #444;
+}
+
+/* "More news →" aligned under the cards */
+.home-more-link {
+  margin-top: $space-xs;
+  text-align: right;
+}
+
+
+
