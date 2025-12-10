@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+
+  /* Allow nav container to wrap instead of clipping items */
+  .masthead__menu .greedy-nav {
+    flex-wrap: wrap;
+  }
+
+  /* Make sure visible links don't hide overflowed items */
+  .masthead__menu .visible-links {
+    overflow: visible !important;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  /* Ensure the hamburger (menu) toggle becomes visible */
+  .masthead__menu .greedy-nav__toggle {
+    display: block !important;
+  }
+}
