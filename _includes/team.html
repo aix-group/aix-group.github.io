@@ -12,7 +12,6 @@ Title + name concatenated as full_name
 {% assign researchers = postdocs | concat: phds %}
 {% assign extphd    = people | where_exp: "p", "p.roles contains 'extphd'" %}
 {% assign students  = people | where_exp: "p", "p.roles contains 'shk'" %}
-{% assign visitors  = people | where_exp: "p", "p.roles contains 'vis'" %}
 {% assign alumni    = people | where_exp: "p", "p.roles contains 'alumnus'" %}
 
 {%- comment -%}
@@ -453,97 +452,6 @@ STUDENT ASSISTANTS
 </section>
 {% endif %}
 
-
-{%- comment -%}
-VISITING RESEARCHERS
-{%- endcomment -%}
-
-{% if visitors.size > 0 %}
-<section class="team-section">
-  <h3 class="site-heading">Visiting Researchers</h3>
-
-  <div class="team-grid">
-    {% for person in visitors %}
-    {% if person.title %}
-    {% assign full_name = person.title | append: " " | append: person.name %}
-    {% else %}
-    {% assign full_name = person.name %}
-    {% endif %}
-    <article class="team-card">
-      <header class="team-card__header">
-        {% if person.img %}
-        <div class="team-card__avatar">
-          <img
-            src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
-            alt="Photo of {{ full_name }}"
-            loading="lazy"
-          />
-        </div>
-        {% endif %}
-        <div class="team-card__title">
-          <h4 class="team-card__name">
-            {% if person.homepage %}
-            <a href="{{ person.homepage | relative_url }}">{{ full_name }}</a>
-            {% else %}
-            {{ full_name }}
-            {% endif %}
-          </h4>
-          {% if person.current or person.organisation %}
-          <p class="team-card__role">
-            {% if person.current %}{{ person.current }}{% endif %}
-            {% if person.current and person.organisation %}, {% endif %}
-            {% if person.organisation %}{{ person.organisation }}{% endif %}
-          </p>
-          {% endif %}
-        </div>
-      </header>
-
-      <div class="team-card__body">
-        {% if person.interests %}
-        <p class="team-card__interests">
-          <strong>Topics:</strong> {{ person.interests | join: ", " }}
-        </p>
-        {% endif %}
-
-        {% if person.mail or person.phone or person.github or person.orcid or person.bib %}
-        <p class="team-card__contact">
-          {% if person.mail %}
-          <i class="fas fa-envelope team-card__icon"></i>
-          <a href="mailto:{{ person.mail }}">{{ person.mail }}</a><br>
-          {% endif %}
-
-          {% if person.github %}
-          <i class="fab fa-github team-card__icon"></i>
-          <a href="https://github.com/{{ person.github }}" target="_blank">
-            github.com/{{ person.github }}
-          </a><br>
-          {% endif %}
-
-          {% if person.orcid %}
-          <i class="fab fa-orcid team-card__icon"></i>
-          <a href="https://orcid.org/{{ person.orcid }}" target="_blank">
-            orcid.org/{{ person.orcid }}
-          </a><br>
-          {% endif %}
-
-          {% if person.bib %}
-          <i class="fas fa-book team-card__icon"></i>
-          <a href="/publications/#{{ person.bib | uri_escape }}">Publications</a><br>
-          {% endif %}
-
-          {% if person.phone %}
-          <i class="fas fa-phone-alt team-card__icon"></i>
-          <span>{{ person.phone }}</span>
-          {% endif %}
-        </p>
-        {% endif %}
-      </div>
-    </article>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
 {%- comment -%}
 ALUMNI
 {%- endcomment -%}
@@ -562,12 +470,21 @@ ALUMNI
     {% else %}
     {% assign full_name = person.name %}
     {% endif %}
-    <article class="team-card team-card--compact">
-      <header class="team-card__header">
-        <div class="team-card__title">
-          <h4 class="team-card__name">{{ full_name }}</h4>
-        </div>
-      </header>
+  <article class="team-card team-card--compact">
+  <header class="team-card__header">
+    {% if person.img %}
+    <div class="team-card__avatar">
+      <img
+        src="{{ '/assets/images/people/' | append: person.img | relative_url }}"
+        alt="Photo of {{ full_name }}"
+        loading="lazy"
+      />
+    </div>
+    {% endif %}
+    <div class="team-card__title">
+      <h4 class="team-card__name">{{ full_name }}</h4>
+    </div>
+    </header>
 
       {% if person.current %}
       <p class="team-card__meta">
