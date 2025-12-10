@@ -4,20 +4,20 @@
 
 .toc {
   border-radius: $radius-md;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   background-color: $color-surface-soft;
   padding: 0;
   overflow: hidden; /* keep rounded corners clean */
-  box-shadow: 0 4px 16px rgba(18, 8, 43, 0.03);
+  box-shadow: $shadow-soft;
 }
 
 /* Title bar ("On this page") */
 .toc .nav__title {
   background-color: $color-brand-primary;
-  color: #ffffff;
+  color: $color-surface;
   font-size: $font-size-xs;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: $letter-spacing-wide;
   padding: $space-sm $space-md;
   margin: 0;
   border-radius: $radius-md $radius-md 0 0;
@@ -28,7 +28,7 @@
 
 /* icon inside title */
 .toc .nav__title .fas {
-  font-size: 0.9em;
+  font-size: $font-size-sm;
   opacity: 0.9;
 }
 
@@ -51,7 +51,7 @@
   font-size: $font-size-sm;
   color: $color-text-main;
   text-decoration: none;
-  border-left: 3px solid transparent;
+  border-left: $border-accent-width solid transparent;
 }
 
 /* hover + focus */

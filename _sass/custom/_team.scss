@@ -87,7 +87,7 @@
 /* Make icons slightly smaller as well */
 .team-grid--students .team-card--compact .team-card__icon,
 .team-grid--alumni   .team-card--compact .team-card__icon {
-  font-size: 0.75em;
+  font-size: $font-size-xs;
   opacity: 0.7;
 }
 
@@ -97,7 +97,7 @@
   display: flex;
   flex-direction: column;
   padding: $space-lg;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   background-color: $color-surface;
   box-shadow: $shadow-soft;
 }
@@ -118,9 +118,9 @@
 
 .team-card__avatar {
   flex-shrink: 0;
-  width: 72px;
-  height: 72px;
-  border-radius: 999px;
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: $radius-pill;
   overflow: hidden;
 }
 
@@ -183,7 +183,7 @@
 .team-card__icon {
   margin-right: $space-xxs;
   opacity: 0.6;
-  font-size: 0.9em;
+  font-size: $font-size-sm;
 }
 
 .team-card__divider {
@@ -192,7 +192,7 @@
 }
 
 /* From tablet up: 2 cards per row for normal grids, 3 for students & alumni */
-@media (min-width: 768px) {
+@media (min-width: $bp-medium) {
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -204,14 +204,14 @@
 }
 
 /* Small screens tweaks */
-@media (max-width: 600px) {
+@media (max-width: $bp-small) {
   .team-card__header {
     flex-direction: row;
     align-items: flex-start;
   }
 
   .team-card__avatar {
-    width: 56px;
-    height: 56px;
+    width: $avatar-size-sm;
+    height: $avatar-size-sm;
   }
 }

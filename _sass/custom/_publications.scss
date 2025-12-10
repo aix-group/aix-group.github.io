@@ -8,7 +8,7 @@
   font-size: $font-size-xs;
   line-height: 1.45;
   color: $color-text-main;
-  max-width: 900px;                /* keeps text readable on wide screens */
+  max-width: $layout-bib-max-width;                /* keeps text readable on wide screens */
 }
 
 /* cites remain hidden, bibliography --cited can then be used and only
@@ -49,7 +49,7 @@
 
 .bib-header {
   /* keep header in the same column as the bibliography */
-  max-width: 900px;
+  max-width: $layout-bib-max-width;
   margin: 0 auto $space-lg;        /* center + bottom spacing */
 
   display: flex;
@@ -65,20 +65,20 @@
 
 .bib-header #filter {
   flex: 0 0 auto;
-  width: 220px;                    /* slightly narrower so it feels closer */
+  width: $layout-bib-sidebar-width;                    /* slightly narrower so it feels closer */
   margin: 0;
 
   font-size: $font-size-sm;
   line-height: 1.4;
   padding: $space-xxs $space-xs;
 
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   background: $color-surface;
   color: $color-text-main;
 
   &:focus {
-    outline: 2px solid $color-brand-primary;
-    outline-offset: 1px;
+    outline: $outline-focus;
+    outline-offset: $outline-offset-focus;
   }
 }
 
@@ -104,9 +104,9 @@
   font-size: $font-size-xl;        /* clearer section title */
   font-weight: $font-weight-semibold;
   color: $color-text-strong;
-  letter-spacing: -0.01em;
+  letter-spacing: $letter-spacing-tight;
 
-  border-bottom: 1px solid $color-border-soft;
+  border-bottom: $border-soft;
   padding-bottom: $space-xs;
 
   /* nice scroll position if you link to #year anchors */
@@ -132,7 +132,7 @@
   display: inline-flex;
   align-items: center;
   padding: $space-xxs $space-xxs;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   font-size: $font-size-xxs;
   text-transform: uppercase;
   letter-spacing: $letter-spacing-wide;
@@ -148,7 +148,7 @@
 }
 
 .pub-links i {
-  font-size: 0.8em;
+  font-size: $font-size-icon-pub-link;  
   margin-right: $space-xxs;
 }
 
@@ -246,7 +246,7 @@ details.pub-bibtex pre {
   margin: $space-xxs 0 0;
   padding: $space-xs $space-sm;
   background: $color-surface-soft;
-  border-left: 3px solid $color-border-soft;
+  border-left: $border-accent;
   border-radius: $radius-sm;
   font-size: $font-size-xxs;
   line-height: 1.3;

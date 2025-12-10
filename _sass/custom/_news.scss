@@ -4,7 +4,7 @@
 
 .news-layout {
   display: grid;
-  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  grid-template-columns: minmax(0, $layout-news-card-min-width) minmax(0, 1fr);
   gap: $space-xl;
   align-items: flex-start;
 }
@@ -84,7 +84,7 @@
   display: block;
   width: 100%;
   padding: $space-xxs $space-sm;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   background-color: $color-surface;
   font-size: $font-size-xs;
   line-height: 1.3;
@@ -104,7 +104,7 @@
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($layout-news-card-min-width, 1fr));
   gap: $space-md;
 }
 
@@ -116,12 +116,12 @@
   position: relative;
   padding: $space-sm $space-sm $space-sm;
   background-color: $color-surface;
-  border: 1px solid rgba(18, 8, 43, 0.04);
+  border: $border-subtle;
   box-shadow: $shadow-subtle;
   transition: 0.12s ease;
 
   &:hover {
-    transform: translateY(-1px);
+    transform: translateY($elevation-translate-y-small);
     box-shadow: $shadow-card;
     border-color: $color-border-soft;
   }
@@ -150,7 +150,7 @@
 .news-type-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.2rem;
+  gap: $space-xxs;
   font-size: $font-size-xxs;
   font-weight: $font-weight-semibold;
   text-transform: uppercase;
@@ -207,15 +207,15 @@
   margin: 0 0 $space-xs;         /* symmetric spacing to excerpt/title */
   display: flex;
   flex-wrap: wrap;
-  gap: 0.15rem;
+  gap: $space-xxs;
 }
 
 /* Tag chips */
 
 .news-tag {
-  padding: 2px 6px;              /* minimal chip padding */
+  padding: $space-xxs $space-xs;              /* minimal chip padding */
   background-color: $color-surface-soft;
-  border: 1px solid rgba(18, 8, 43, 0.06);
+  border: $border-subtle-strong;
   font-size: $font-size-xxs;     /* same size as PAPER label */
   line-height: 1.1;
   color: $color-text-main;
@@ -301,7 +301,7 @@ footer.page__meta .page__taxonomy {
   display: inline-flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 0.25rem;          // space between label and chips
+  gap: $space-xxs;          // space between label and chips
 }
 
 /* Little space between icon/label and chips */
@@ -316,9 +316,9 @@ footer.page__meta .page__taxonomy .sep {
 
 /* Chip style: match .news-tag */
 footer.page__meta .page__taxonomy-item {
-  padding: 2px 6px;
+  padding: $space-xxs $space-xs;
   background-color: $color-surface-soft;
-  border: 1px solid rgba(18, 8, 43, 0.06);
+  border: $border-subtle-strong;
   font-size: $font-size-xxs;
   line-height: 1.1;
   color: $color-text-main;
@@ -374,7 +374,7 @@ nav.pagination .pagination--pager {
 
   color: $color-brand-primary;
   background-color: $color-surface;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   box-shadow: $shadow-subtle;
   border-radius: 0;
 
@@ -383,7 +383,7 @@ nav.pagination .pagination--pager {
 }
 
 nav.pagination .pagination--pager:hover {
-  transform: translateY(-1px);
+  transform: translateY($elevation-translate-y-small);
   box-shadow: $shadow-card;
   border-color: $color-border-soft;
 }

@@ -43,7 +43,7 @@ a:-webkit-any-link {
 
 /* adjust logo size */
 .site-logo img {
-  max-height: 3rem;
+  max-height: $logo-max-height;
 }
 
 /* site headings with XAI logo elements */
@@ -54,7 +54,7 @@ a:-webkit-any-link {
 
 .site-heading::before {
   content: '';
-  background-size: 0.6em 0.8em;
+  background-size: $logo-mark-width $logo-mark-height;
   background-repeat: no-repeat;
   background-color: $color-brand-primary;
   -webkit-mask-image: url(/assets/images/arrow-purple.svg);
@@ -64,11 +64,11 @@ a:-webkit-any-link {
   mask-image: url(/assets/images/arrow-purple.svg);
   mask-position: center;
   mask-repeat: no-repeat;
-  width: 0.6em;
-  height: 0.8em;
+  width: $logo-mark-width;
+  height: $logo-mark-height;
   display: inline-block;
-  top: 8px;
-  margin-right: 0.5em;
+  top: $logo-mark-offset-top;
+  margin-right: $logo-mark-gap;
 }
 
 .site-heading.accent-color-primary::before {

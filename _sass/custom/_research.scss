@@ -22,7 +22,7 @@
   flex-direction: column;
   padding: $space-sm;
   background-color: $color-surface;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   box-shadow: $shadow-subtle;
   border-radius: 0;
   transition: 0.12s ease;

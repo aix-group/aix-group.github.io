@@ -14,7 +14,7 @@
 //* Related posts: use a proper CSS grid */
 .page__related .grid__wrapper {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax($layout-related-card-min-width, 1fr));
   gap: $space-md;
   margin: 0;                // optional: tidy up
 }
@@ -33,7 +33,7 @@
   position: relative;
   padding: $space-sm;
   background-color: $color-surface;
-  border: 1px solid $color-border-soft;
+  border: $border-soft;
   border-radius: 0 !important;   // overrides MM + your news-style card
   box-shadow: $shadow-subtle;
   transition: 0.12s ease;
@@ -43,7 +43,7 @@
 }
 
 .page__related .archive__item:hover {
-  transform: translateY(-1px);
+  transform: translateY($elevation-translate-y-small);
   box-shadow: $shadow-card;
   border-color: $color-border-soft;
 }

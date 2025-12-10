@@ -61,3 +61,46 @@ $radius-pill:            999px;
 /* Breakpoints */
 $bp-small:               600px;
 $bp-medium:              48em;
+/* Layout */
+$layout-splash-max-width:    60rem;
+$layout-bib-max-width:       900px;
+$layout-bib-sidebar-width:   220px;
+$layout-news-card-min-width: 260px;
+$layout-related-card-min-width: 200px;
+
+/* Logo + avatar sizing */
+$logo-max-height:            3rem;
+$logo-mark-width:            0.6em;
+$logo-mark-height:           0.8em;
+$logo-mark-offset-top:       8px;
+$logo-mark-gap:              0.5em;
+
+$avatar-size:                72px;
+$avatar-size-sm:             56px;
+
+/* Borders & outlines */
+$color-border-subtle:        rgba(18, 8, 43, 0.04);
+$color-border-subtle-strong: rgba(18, 8, 43, 0.06);
+
+$border-soft:                1px solid $color-border-soft;
+$border-subtle:              1px solid $color-border-subtle;
+$border-subtle-strong:       1px solid $color-border-subtle-strong;
+$border-accent:              3px solid $color-border-soft;
+
+$outline-focus:              2px solid $color-brand-primary;
+$outline-offset-focus:       1px;
+
+/* Brand-tinted surfaces */
+$color-surface-brand-soft:         rgba(122, 70, 235, 0.05);
+$color-surface-brand-soft-strong:  rgba(122, 70, 235, 0.08);
+
+/* Typography extras */
+$letter-spacing-tight:       -0.01em;
+$border-width-blockquote:    0.2em;
+$font-size-icon-pub-link:    0.8em;
+$border-accent-width:        3px;
+
+
+/* Motion / transforms */
+$elevation-translate-y-small:  -1px;
+$elevation-translate-y-medium: -4px;

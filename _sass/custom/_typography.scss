@@ -4,13 +4,13 @@
 
 /* overwrite highlight colors */
 blockquote {
-  border-left: 0.2em solid $color-brand-primary;
+  border-left: $border-width-blockquote solid $color-brand-primary;
 }
 
 .pagination li a.current,
 .pagination li a.current.disabled {
-  color: #fff;
-  background: #7a46eb;
+  color: $color-surface;
+  background: $color-brand-primary;
 }
 
 /* Global link hover color */
@@ -22,18 +22,18 @@ a:focus {
 
 /* spacing for major sections */
 .page__content h2 {
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
+  margin-top: $space-3xl;
+  margin-bottom: $space-md;
 }
 
 .page__content h3 {
-  margin-top: 1.75rem;
-  margin-bottom: 0.75rem;
+  margin-top: $space-xl;
+  margin-bottom: $space-sm;
 }
 
 /* slightly more breathing room between paragraphs */
 .page__content p {
-  margin-bottom: 0.8rem;
+  margin-bottom: $space-sm;
 }
 
 .video-container {
@@ -41,7 +41,7 @@ a:focus {
   padding-bottom: 56.25%; /* 16:9 aspect ratio */
   height: 0;
   overflow: hidden;
-  margin: 1.5em 0;
+  margin: $space-xl 0;
 }
 
 .video-container iframe {
