@@ -61,7 +61,7 @@ The site is built with [jekyll](https://jekyllrb.com), [scholar](https://github.
 4. Run with `bundle exec jekyll serve`, the site is accessible at "http://127.0.0.1:4000/" (note the trailing `/`)
 
 ## Theme customization
-`/sass/custom.scss` holds all custom adaptations
+`/sass/custom/` holds all custom adaptations
 
 
 
