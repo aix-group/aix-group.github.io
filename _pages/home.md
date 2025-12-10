@@ -25,17 +25,14 @@ home_feature_row:
   - icon: "fas fa-brain"
     title: "Explainable AI"
     excerpt: "Understanding models, generating explanations, and evaluating interpretability."
-    url: "/research/#explainable-ai"
 
   - icon: "fas fa-comments"
     title: "Language & LLMs"
     excerpt: "Capabilities, limitations, and behavior of large language models."
-    url: "/research/#language-and-llms"
 
   - icon: "fas fa-cogs"
     title: "Applied Machine Learning"
     excerpt: "ML for high-stakes, safety-critical, and real-world domains."
-    url: "/research/#applied-machine-learning"
 ---
 
 <div class="home-intro">
@@ -49,6 +46,10 @@ home_feature_row:
 <h2 class="home-section-heading site-heading accent-color-primary">Our research areas</h2>
 
 {% include feature_row_custom.html features=page.home_feature_row %}
+
+  <p class="home-news-more">
+    <a href="/posts/">Read more →</a>
+  </p>
 
 <h2 class="home-section-heading site-heading accent-color-secondary">Recent news</h2>
 

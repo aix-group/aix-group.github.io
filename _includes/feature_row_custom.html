@@ -11,9 +11,14 @@
         </h2>
         <p class="archive__item-excerpt">{{ feature.excerpt }}</p>
         <div class="archive__item-body">
-          <p><a href="{{ feature.url }}">Read more →</a></p>
+          <p>
+            {% if feature.url %}
+              <a href="{{ feature.url }}">Read more →</a>
+            {% endif %}
+          </p>
         </div>
       </div>
     </div>
   {% endfor %}
 </div>
+
