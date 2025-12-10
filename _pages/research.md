@@ -47,6 +47,9 @@ and studies **how people perceive errors and uncertainty**, {% cite Papenmeier20
 
 ## Language & LLMs {#language-and-llms}
 
+>“How does a model encode meaning beneath billions of parameters?”
+>“And how can we use it reliably in situations where mistakes matter?”
+
 Language is messy, individualized, and deeply context-dependent. Our work investigates how large language models (LLMs) represent information, how they can be adapted or constrained, and how we can evaluate their outputs in reliable, human-centered ways.
 
 Our research in this area examines **LLM representations and probing**, 
