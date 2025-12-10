@@ -1,0 +1,128 @@
+/* ==========================================================================
+   SEARCH RESULTS – xAI Lab style
+   ========================================================================== */
+
+/* Overall search block spacing inside overlay/content block */
+.search-content {
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+}
+
+/* Constrain width like other content pages */
+.search-content__inner-wrap {
+  max-width: $layout-splash-max-width;
+  margin-inline: auto;
+}
+
+/* "8 Result(s) found" line */
+.results__found {
+  margin-bottom: $space-md;
+  font-size: $font-size-xs;
+  color: $color-text-muted;
+}
+
+/* Result card container (div.list__item) */
+.results .list__item {
+  margin: 0 0 $space-md;
+  padding: $space-md $space-lg;
+  background-color: $color-surface;
+  border: $border-soft;
+  box-shadow: $shadow-subtle;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.results .list__item:hover {
+  transform: translateY($elevation-translate-y-small);
+  box-shadow: $shadow-card;
+}
+
+/* Title */
+.results .list__item h2,
+.results .list__item h3 {
+  margin: 0 0 $space-xs;
+}
+
+.results .list__item h2 a,
+.results .list__item h3 a {
+  display: inline-block;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-strong;
+  text-decoration: none;
+}
+
+.results .list__item h2 a:hover,
+.results .list__item h3 a:hover {
+  color: $color-brand-primary;
+}
+
+/* Excerpt */
+.results .list__item p {
+  margin: 0;
+  font-size: $font-size-xs;
+  line-height: 1.4;
+  color: $color-text-muted;
+}
+
+/* Remove MM defaults inside search results */
+.results .list__item .archive__item {
+  padding: 0;           /* remove MM padding */
+  max-width: none;      /* allow full width */
+  width: 100%;
+}
+
+.results .list__item .archive__item-title,
+.results .list__item .archive__item-excerpt {
+  max-width: none;
+  width: 100%;
+}
+.results .list__item .archive__item-title {
+  margin-top: 0;
+  margin-bottom: $space-xs;
+}
+
+.results .list__item .archive__item-excerpt {
+  margin: 0;
+}
+
+
+/* Remove unwanted MM vertical spacing inside cards */
+.results .list__item .archive__item {
+  padding: 0 !important;           /* kill MM padding */
+  margin: 0 !important;
+}
+
+/* Remove title default margins */
+.results .list__item .archive__item-title {
+  margin-top: 0 !important;
+  margin-bottom: $space-xxs !important;   /* tiny space, optional */
+}
+
+/* Remove excerpt default margins */
+.results .list__item .archive__item-excerpt {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+/* Visible search box – same look as publications filter */
+.search-content__form input#search.search-input {
+  display: block;
+  width: 100%;
+
+  font-size: $font-size-sm;
+  line-height: 1.4;
+  padding: $space-xxs $space-xs;
+
+  border: $border-soft !important;       // override theme
+  background: $color-surface !important; // override theme
+  color: $color-text-main;
+
+  box-shadow: none;
+  -webkit-appearance: none;
+}
+
+/* Focus state */
+.search-content__form input#search.search-input:focus {
+  outline: $outline-focus;
+  outline-offset: $outline-offset-focus;
+}
+
