@@ -34,6 +34,7 @@ Mandatory fields:
   * _postdoc_ - Postdoctoral Researcher
   * _admin_ - Administration
   * _head_ - group leader  
+  * _alumnus_ - previous group members 
 
 Optional fields:
 - mail - e-mail address, e.g. `first.last@example.org.` Multiple e-mail addresses are possible, must be provided as list, e.g., `['mail1@example.org', 'mail2@example.org']`
@@ -42,13 +43,14 @@ Optional fields:
 - _position-special:_ more details for e.g., postdocs `Junior Research Group Lead`
 - _interests:_ a list of interests, e.g. `['machine learning', 'coffe']`
 - _img:_ - first, upload an image to [`/img/people`](/img/people), then provide the filename here, e.g. `LastFirst.jpg`
-
+- _orcid:_  - orcid, pattern: 0000-000X-XXXX-XXXX
+- bib: A string that can be used to filter the publication list for this person. Make sure it is unique.
 
 <h3 id="publications">Manage Publications</h3>
 
 Replace `references.bib` at [`/_bibliography`](/_bibliography) with your latest bibtex list of publications.
 
-Make sure that exclusively either `doi` or `url` are set for an entry (not both). If both are available, `doi` is to prefer. You may use the export options of your favorite reference manager to remove the unnecessary one, e.g. [Zotero](https://www.zotero.org) with [Better Bibtex](https://retorque.re/zotero-better-bibtex/).
+The publication list will automatically use `doi`, `url`, and `code` fields.
 
 # Devs
 The site is built with [jekyll](https://jekyllrb.com), [scholar](https://github.com/inukshuk/jekyll-scholar)-plugin and [minimal mistakes](https://mmistakes.github.io/minimal-mistakes/) theme.
@@ -59,8 +61,7 @@ The site is built with [jekyll](https://jekyllrb.com), [scholar](https://github.
 4. Run with `bundle exec jekyll serve`, the site is accessible at "http://127.0.0.1:4000/" (note the trailing `/`)
 
 ## Theme customization
-`/assets/main.scss` loads the main theme configuration and holds custom adaptations.
-
+`/sass/custom.scss` holds all custom adaptations
 
 
 
