@@ -6,7 +6,7 @@ categories:
   - project
 tags:
   - computer vision
-  - XAI
+  - xai
   - medicine
 ---
 

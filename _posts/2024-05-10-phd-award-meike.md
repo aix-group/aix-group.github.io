@@ -5,10 +5,10 @@ classes: wide
 categories:
   - award
 tags:
-  - XAI
+  - xai
 ---
 
-Meike Nauta has been awarded the Overijssel PhD Award for her outstanding dissertation, "Explainable AI and Interpretable Computer Vision – From Oversight to Insight."
+Meike Nauta has been awarded the Overijssel PhD Award for her outstanding [dissertation](https://doi.org/10.3990/1.9789036555753), "Explainable AI and Interpretable Computer Vision – From Oversight to Insight."
 The award recognizes Nauta’s innovative research, which focuses on making AI systems more transparent and interpretable, especially in the field of computer vision. Her work provides new methods to understand and trust AI decisions, bridging the gap between complex models and human understanding. 
 
 Congratulations, Meike, on this well-deserved honor! Read more about the award [here](https://www.utwente.nl/en/academic-ceremonies/awards/overijssel-phd-award/). 

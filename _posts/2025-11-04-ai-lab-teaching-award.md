@@ -5,7 +5,7 @@ classes: wide
 categories:
   - award
 tags:
-  - AI
+  - ai
   - education
 ---
 

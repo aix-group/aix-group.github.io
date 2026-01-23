@@ -6,7 +6,7 @@ categories:
   - project
 tags:
   - computer vision
-  - explainable AI
+  - xai
 ---
 
 Pioneers in Healthcare is an innovation fund awarded by University of Twente, Saxion, MST, ZGT and Deventer Hospital. 

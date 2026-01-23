@@ -6,7 +6,7 @@ categories:
   - publication
 tags:
   - computer vision
-  - explainable AI
+  - xai
 ---
 
 Interpretable methods using prototypical patches help AI explain its reasoning to humans. 
