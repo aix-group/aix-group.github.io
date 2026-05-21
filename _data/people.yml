@@ -46,25 +46,7 @@
   orcid: 0009-0008-2696-8331
   bib: Elhadri
 
-- name: Jan Trienes
-  title: M.Sc.
-  mail: ['jan.trienes@uni-marburg.de']
-  roles: ['phd']
-  interests: ['Natural Language Processing', 'Information Retrieval']
-  img: Trienes-Jan.jpg
-  github: jantrienes
-  orcid: 0000-0001-8891-0022
-  bib: Trienes
-  homepage: https://jantrienes.com
 
-- name: Olufunke Sarumi
-  title: M.Sc.
-  mail: ['olufunke.sarumi@uni-marburg.de']
-  roles: ['phd']
-  interests: ['Natural Language Processing']
-  orcid: 0000-0002-5654-1776
-  img: Sarumi-Olufunke.jpg
-  bib: Sarumi
 
 - name: Paul Youssef
   title: M.Sc.
@@ -86,15 +68,6 @@
   orcid: 0000-0001-7658-0599
   bib: Phuong
 
-- name: Tanmay Chakraborty
-  title: M.Sc.
-  mail: tanmay.chakraborty@aumovio.com
-  roles: ['phd']
-  interests: ['Explainable AI', 'Bayesian Optimization']
-  img: Chakraborty-Tanmay.jpg
-  bib: Chakraborty
-  orcid: 0000-0003-0258-2270
-  organisation: Aumovio SE
 
 - name: Sylvain Brouwer
   title: M.Sc.
@@ -107,15 +80,14 @@
   orcid: 0009-0000-4576-5224
   organisation: Institute for AI in Medicine (IKI), Marburg University
 
-- name: Meijie Li
+- name: Louis Peter
   title: M.Sc.
-  mail: ['meijie.li@uni-due.de']
   roles: ['extphd']
-  interests: ['Explainable AI', 'Machine Learning for Medicine']
-  img: Li-Meijie.jpg
-  bib: Meijie
-  github: Meijie66
-  organisation: University of Duisburg-Essen, RTG WisperMed
+  mail: louis.peter@kite.thm.de
+  interests: ['Explainable AI', 'Time Series']
+  img: N-N.jpg
+  bib: Louis%20Peter
+  organisation: THM Giessen, and FCMH 
 
 - name: Marcel Wentzien
   title: M.Sc.
@@ -127,6 +99,17 @@
   orcid: 0009-0001-8420-0573
   organisation: Ernst Abbe University of Applied Sciences Jena
 
+- name: Meijie Li
+  title: M.Sc.
+  mail: ['meijie.li@uni-due.de']
+  roles: ['extphd']
+  interests: ['Explainable AI', 'Machine Learning for Medicine']
+  img: Li-Meijie.jpg
+  bib: Meijie
+  github: Meijie66
+  organisation: University of Duisburg-Essen, RTG WisperMed
+
+
 - name: Osman Koras
   title: M.Sc.
   mail: ['osman.koras@uni-due.de']
@@ -136,25 +119,39 @@
   bib: Koras
   organisation: University of Duisburg-Essen
 
-- name: Anastasiia Derzhanskia
-  roles: ['shk']
-  interests: ['Natural Language Processing','Conversational Agents']
 
 - name: Timofei Ushakov
   roles: ['shk']
   interests: ['Deep Learning']
 
-- name: Aliya Tharwani
-  roles: ['shk']
-  interests: ['Machine Learning']
+- name: Tanmay Chakraborty
+  title: Dr.
+  mail: tanmay.chakraborty@aumovio.com
+  roles: ['alumnus']
+  interests: ['Explainable AI', 'Bayesian Optimization']
+  img: Chakraborty-Tanmay.jpg
+  bib: Chakraborty
+  orcid: 0000-0003-0258-2270
+  current: AI Engineer at Aumovio
 
+- name: Jan Trienes (PhD)
+  title: Dr.
+  roles: ['alumnus']
+  interests: ['Natural Language Processing', 'Information Retrieval']
+  img: Trienes-Jan.jpg
+  github: jantrienes
+  orcid: 0000-0001-8891-0022
+  current: Data & Machine Learning Engineer at Innovex
+  bib: Trienes
+  
 - name: Shreyasi Pathak (PhD)
   title: Dr. 
   roles: ['alumnus']
   interests:  ['Explainable AI', 'Machine Learning for Medicine']
   img: Pathak-Shreyasi.jpg
   github: ShreyasiPathak
-  current: Post Doc at University of Twente
+  current: PostDoc at University of Twente (NL)
+  bib: Pathak
 
 - name: Meike Nauta (PhD)
   title: Dr. 
@@ -162,6 +159,14 @@
   interests: ['Explainable AI', 'Computer Vision']
   img: Nauta-Meike.jpg
   current: AI Consultant at Datacation (NL)
+
+- name: Olufunke Sarumi
+  title: M.Sc.
+  roles: ['alumnus']
+  interests: ['Natural Language Processing']
+  orcid: 0000-0002-5654-1776
+  img: Sarumi-Olufunke.jpg
+  bib: Sarumi
 
 - name: Sultan Imangaliyev (PostDoc)
   title: Dr. 
@@ -171,8 +176,13 @@
 
 
 - name: Lisa Anita De Santi (Visiting Researcher)
+  title: Dr. 
   roles: ['alumnus']
   interests:  ['Explainable AI', 'Machine Learning for Medicine']
+
+- name: Anastasiia Derzhanskia (SHK)
+  roles: ['alumnus']
+  interests: ['Natural Language Processing','Conversational Agents']
 
 - name: Ali Kholmovaia (SHK)
   roles: ['alumnus']
