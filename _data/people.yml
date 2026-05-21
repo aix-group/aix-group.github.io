@@ -85,7 +85,9 @@
   roles: ['extphd']
   mail: louis.peter@kite.thm.de
   interests: ['Explainable AI', 'Time Series']
-  img: N-N.jpg
+  img: Peter-Louis.jpg
+  orcid: 0009-0001-7478-1888
+  github: ls-ptr
   bib: Louis%20Peter
   organisation: THM Giessen, and FCMH 
 
