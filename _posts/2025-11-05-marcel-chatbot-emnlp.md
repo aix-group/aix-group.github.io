@@ -9,7 +9,7 @@ tags:
   - education
 ---
 
-At this year’s EMNLP in Suzhou, China, Jan Trienes presented *Marcel*—a RAG-based conversational agent built to handle enrollment questions at Marburg University {% cite Trienes2025_emnlp_marcel-chatbot %}. The project grew out of a simple observation: as our M.Sc. Data Science program expanded, so did the repetitive workload for staff answering student inquiries about deadlines, prerequisites, and language requirements. So, we set up a [project]({% post_url 2024-04-01-marflex-marcel-project %}).
+At this year’s EMNLP in Suzhou, China, Jan Trienes presented *Marcel*, a RAG-based conversational agent built to handle enrollment questions at Marburg University {% cite Trienes2025_emnlp_marcel-chatbot %}. The project grew out of a simple observation: as our M.Sc. Data Science program expanded, so did the repetitive workload for staff answering student inquiries about deadlines, prerequisites, and language requirements. So, we set up a [project]({% post_url 2024-04-01-marflex-marcel-project %}).
 
 ### How Marcel Works
 - **Precision answers**: Pulls up-to-date information from university resources (websites, exam regulations) using retrieval-augmented generation.

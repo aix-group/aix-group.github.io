@@ -19,4 +19,4 @@ This term marks the third iteration of the AI-Lab. I’m excited to see how the 
 ![image-center](/assets/images/posts/2025_ailab-award-celebration.jpeg){: .align-center style="width: 50%"}
 
 
-[Official Award Website](https://wissenschaft.hessen.de/presse/exzellente-lehre-aus-giessen-frankfurt-und-marburg-mit-hessischem-hochschullehrpreis-ausgezeichnet)
+<i class="fa fa-link" style="color: #7a46eb;"></i>  [Official Award Website](https://wissenschaft.hessen.de/presse/exzellente-lehre-aus-giessen-frankfurt-und-marburg-mit-hessischem-hochschullehrpreis-ausgezeichnet)
