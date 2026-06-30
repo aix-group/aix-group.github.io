@@ -2833,4 +2833,34 @@ Privacy preservation is one of the key objectives of the project.},
   url       = {https://openreview.net/forum?id=AiT8F6pbfi},
 }
 
+@InProceedings{Holmov2026_acl_hidden-facts-and-how-to-find-them,
+  author    = {Holmov, Ali and Youssef, Paul and Schoots, Nandi and Seifert, Christin},
+  booktitle = {Findings of the {A}ssociation for {C}omputational {L}inguistics: {ACL} 2026},
+  title     = {One Mask to Rule Them All: On Hidden Facts after Editing and How to Find Them},
+  year      = {2026},
+  address   = {San Diego, California, United States},
+  editor    = {Liakata, Maria and Moreira, Viviane P. and Zhang, Jiajun and Jurgens, David},
+  month     = jul,
+  pages     = {11163--11181},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {Knowledge editing methods such as ROME and MEMIT update factual associations in transformer models by modifying MLP weights. While evaluated mainly by output behavior, their internal mechanism remains underexplored. We investigate whether edits rely on a common mechanism, regardless of which fact is modified. Despite fact-specific weight changes, we argue that ROME and MEMIT target the same subset of weights critical for maintaining edits. To isolate this subset, we train a compact binary mask over the edited weights. The mask reverses 80{\%} of edits on the training set and over 70{\%} on the test set, confirming that diverse edits share a common functional structure. Our analysis reveals that the mask reverses edits by eliminating overattention in later layers. Additionally, we show that injecting the mask during editing drops editing success from 98{\%} to 38{\%}, demonstrating that this mechanism is necessary for edits to succeed. Our finding that edits suppress rather than overwrite knowledge explains why ROME and MEMIT fail to propagate changes to related facts. The identified common functional subspace informs detection and defense against unwanted edits.},
+  isbn      = {979-8-89176-395-1},
+  url       = {https://aclanthology.org/2026.findings-acl.543/},
+}
+
+@InProceedings{Wang2026_acl_multilingual-counterfactuals,
+  author    = {Wang, Qianli and Nguyen, Van Bach and Liu, Yihong and Splitt, Fedor and Feldhus, Nils and Seifert, Christin and Schuetze, Hinrich and M{\"o}ller, Sebastian and Schmitt, Vera},
+  booktitle = {Proceedings of the 64th Annual Meeting of the {A}ssociation for {C}omputational {L}inguistics (Volume 1: Long Papers)},
+  title     = {Parallel Universes, Parallel Languages: A Comprehensive Study on {LLM}-based Multilingual Counterfactual Example Generation},
+  year      = {2026},
+  address   = {San Diego, California, United States},
+  editor    = {Liakata, Maria and Moreira, Viviane P. and Zhang, Jiajun and Jurgens, David},
+  month     = jul,
+  pages     = {323--346},
+  publisher = {Association for Computational Linguistics},
+  abstract  = {Counterfactuals refer to minimally edited inputs that cause a model{'}s prediction to change, serving as a promising approach to explaining the model{'}s behavior. Large language models (LLMs) excel at generating English counterfactuals and demonstrate multilingual proficiency. However, their effectiveness in generating multilingual counterfactuals remains unclear. To this end, we conduct a comprehensive study on multilingual counterfactuals. We first conduct automatic evaluations on both directly generated counterfactuals in the target languages and those derived via English translation across six languages. Although translation-based counterfactuals offer higher validity than their directly generated counterparts, they demand substantially more modifications and still fall short of matching the quality of the original English counterfactuals. Second, we find the patterns of edits applied to high-resource European-language counterfactuals to be remarkably similar, suggesting that cross-lingual perturbations follow common strategic principles. Third, we reveal that multilingual counterfactual data augmentation (CDA) yields larger model performance improvements than cross-lingual CDA, especially for lower-resource languages. Yet, the imperfections of the generated counterfactuals limit gains in model performance and robustness. Finally, we identify and categorize four main types of errors that consistently appear in the generated counterfactuals across languages.},
+  isbn      = {979-8-89176-390-6},
+  url       = {https://aclanthology.org/2026.acl-long.12/},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
